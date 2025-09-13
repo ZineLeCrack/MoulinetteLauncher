@@ -15,8 +15,8 @@ src_dir="ex01"
 /bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_alphabet.c" "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Does not compile <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Does not compile <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	"$executable" > "$script_dir/user_output"
