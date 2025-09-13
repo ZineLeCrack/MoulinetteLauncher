@@ -21,11 +21,12 @@ else
 
 	diff -a "$script_dir/user_output" "$script_dir/expected_output"
 
-	echo
 	if [[ $? -ne 0 ]]; then
+		echo
 		echo -e "$RED========================== Diff detected =======================$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
 	else
+		echo
 		echo -e "${GREEN}Diff OK :)${RESET}"
 		echo -e "$GREEN============================ SUCCESS ============================$RESET"
 	fi

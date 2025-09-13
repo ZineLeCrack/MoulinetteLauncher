@@ -37,18 +37,18 @@ else
 	bash "$script_dir/ex01/C00-ex01.sh"
 fi
 
-# src_dir="ex02"
+src_dir="ex02"
 
-# echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+echo
+echo -e "$YELLOW============================   ex02  ============================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
-# 	echo
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex00/C00-ex00.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo -e "$RED========================= Nothing turn in =======================$RESET"
+	echo
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex02/C00-ex02.sh"
+fi
 
 # src_dir="ex03"
 
