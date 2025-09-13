@@ -108,31 +108,33 @@ else
 	bash "$script_dir/ex05/C00-ex05.sh"
 fi
 
-# src_dir="ex06"
+src_dir="ex06"
 
-# echo
-# echo -e "$MAGENTA============================   ex00  ============================$RESET"
+echo
+echo -e "$MAGENTA=========================     ex06       ========================$RESET"
+echo -e "$MAGENTA========================= ft_print_comb2 ========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex00/C00-ex00.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex06/C00-ex06.sh"
+fi
 
-# src_dir="ex07"
+src_dir="ex07"
 
-# echo
-# echo -e "$MAGENTA============================   ex00  ============================$RESET"
+echo
+echo -e "$MAGENTA===========================   ex07    ===========================$RESET"
+echo -e "$MAGENTA=========================== ft_putnbr ===========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex00/C00-ex00.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex07/C00-ex07.sh"
+fi
 
 # src_dir="ex08"
 

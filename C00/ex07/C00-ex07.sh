@@ -10,9 +10,9 @@ RESET="\033[0m"
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
 executable="$script_dir/output"
-src_dir="ex05"
+src_dir="ex07"
 
-/bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_comb.c" "$script_dir/main.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror "$src_dir/ft_putnbr.c" "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo
