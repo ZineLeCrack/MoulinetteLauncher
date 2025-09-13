@@ -23,3 +23,107 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex00/C00-ex00.sh"
 fi
+
+src_dir="ex01"
+
+echo
+echo -e "$YELLOW============================   ex01  ============================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo -e "$RED========================= Nothing turn in =======================$RESET"
+	echo
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex01/C00-ex01.sh"
+fi
+
+# src_dir="ex02"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
+
+# src_dir="ex03"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
+
+# src_dir="ex04"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
+
+# src_dir="ex05"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
+
+# src_dir="ex06"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
+
+# src_dir="ex07"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
+
+# src_dir="ex08"
+
+# echo
+# echo -e "$YELLOW============================   ex00  ============================$RESET"
+
+# if [[ ! -d "$src_dir" ]]; then
+# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo
+# 	echo -e "${RED}KO :(${RESET}"
+# else
+# 	bash "$script_dir/ex00/C00-ex00.sh"
+# fi
