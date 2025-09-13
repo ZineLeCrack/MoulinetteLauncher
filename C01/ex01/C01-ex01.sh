@@ -21,11 +21,11 @@ if [[ $? -ne 0 ]]; then
 else
 	"$executable" > "$script_dir/user_output"
 
-	diff -a "$script_dir/user_output" "$script_dir/expected_output"
+	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
 	if [[ $? -ne 0 ]]; then
 		echo
-		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>> Diff detected <<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
 	else
 		echo
