@@ -12,8 +12,6 @@ echo -e "$BLUE==========================     C00    ===========================$
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
-# testing ex00...
-
 src_dir="ex00"
 
 echo
@@ -136,15 +134,16 @@ else
 	bash "$script_dir/ex07/C00-ex07.sh"
 fi
 
-# src_dir="ex08"
+src_dir="ex08"
 
-# echo
-# echo -e "$MAGENTA============================   ex00  ============================$RESET"
+echo
+echo -e "$MAGENTA========================      ex08      =========================$RESET"
+echo -e "$MAGENTA======================== ft_print_combn =========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex00/C00-ex00.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex08/C00-ex08.sh"
+fi
