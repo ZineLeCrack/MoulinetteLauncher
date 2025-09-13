@@ -3,9 +3,12 @@
 RED="\033[31;1m"
 GREEN="\033[32;1m"
 YELLOW="\033[33;1m"
+BLUE="\033[34;1m"
+MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
-echo -e "$YELLOW============================   C00   ============================$RESET"
+echo
+echo -e "$BLUE==========================     C00    ===========================$RESET"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
@@ -14,10 +17,13 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 src_dir="ex00"
 
 echo
-echo -e "$YELLOW============================   ex00  ============================$RESET"
+echo
+
+echo -e "$MAGENTA==========================    ex00    ===========================$RESET"
+echo -e "$MAGENTA========================== ft_putchar ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
-	echo -e "$RED========================= Nothing turn in =======================$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo
 	echo -e "${RED}KO :(${RESET}"
 else
@@ -27,10 +33,13 @@ fi
 src_dir="ex01"
 
 echo
-echo -e "$YELLOW============================   ex01  ============================$RESET"
+echo
+
+echo -e "$MAGENTA=======================       ex01        =======================$RESET"
+echo -e "$MAGENTA======================= ft_print_alphabet =======================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
-	echo -e "$RED========================= Nothing turn in =======================$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo
 	echo -e "${RED}KO :(${RESET}"
 else
@@ -40,49 +49,58 @@ fi
 src_dir="ex02"
 
 echo
-echo -e "$YELLOW============================   ex02  ============================$RESET"
+echo
+
+echo -e "$MAGENTA===================           ex02            ===================$RESET"
+echo -e "$MAGENTA=================== ft_print_reverse_alphabet ===================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
-	echo -e "$RED========================= Nothing turn in =======================$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex02/C00-ex02.sh"
 fi
 
-# src_dir="ex03"
+src_dir="ex03"
 
-# echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+echo
+echo
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
-# 	echo
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex00/C00-ex00.sh"
-# fi
+echo -e "$MAGENTA=======================       ex03       ========================$RESET"
+echo -e "$MAGENTA======================= ft_print_numbers ========================$RESET"
 
-# src_dir="ex04"
+if [[ ! -d "$src_dir" ]]; then
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex03/C00-ex03.sh"
+fi
 
-# echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+src_dir="ex04"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
-# 	echo
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex00/C00-ex00.sh"
-# fi
+echo
+echo
+
+echo -e "$MAGENTA========================      ex04      =========================$RESET"
+echo -e "$MAGENTA======================== ft_is_negative =========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex04/C00-ex04.sh"
+fi
 
 # src_dir="ex05"
 
 # echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+# echo -e "$MAGENTA============================   ex00  ============================$RESET"
 
 # if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 # 	echo
 # 	echo -e "${RED}KO :(${RESET}"
 # else
@@ -92,10 +110,10 @@ fi
 # src_dir="ex06"
 
 # echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+# echo -e "$MAGENTA============================   ex00  ============================$RESET"
 
 # if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 # 	echo
 # 	echo -e "${RED}KO :(${RESET}"
 # else
@@ -105,10 +123,10 @@ fi
 # src_dir="ex07"
 
 # echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+# echo -e "$MAGENTA============================   ex00  ============================$RESET"
 
 # if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 # 	echo
 # 	echo -e "${RED}KO :(${RESET}"
 # else
@@ -118,10 +136,10 @@ fi
 # src_dir="ex08"
 
 # echo
-# echo -e "$YELLOW============================   ex00  ============================$RESET"
+# echo -e "$MAGENTA============================   ex00  ============================$RESET"
 
 # if [[ ! -d "$src_dir" ]]; then
-# 	echo -e "$RED========================= Nothing turn in =======================$RESET"
+# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 # 	echo
 # 	echo -e "${RED}KO :(${RESET}"
 # else
