@@ -6,3 +6,8 @@
 # include <limits.h>
 # include <math.h>
 # include <sys/wait.h>
+
+void	ft_putstr(char const *str)
+{
+	while (write(1, str, *str != 0)) str++;
+}
