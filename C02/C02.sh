@@ -120,19 +120,19 @@ else
 	bash "$script_dir/ex06/C02-ex06.sh"
 fi
 
-# src_dir="ex07"
+src_dir="ex07"
 
-# echo
-# echo -e "$MAGENTA========================      ex07      =========================$RESET"
-# echo -e "$MAGENTA======================== ft_rev_int_tab =========================$RESET"
+echo
+echo -e "$MAGENTA=========================     ex07     ==========================$RESET"
+echo -e "$MAGENTA========================= ft_strupcase ==========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex07/C01-ex07.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex07/C02-ex07.sh"
+fi
 
 # src_dir="ex08"
 

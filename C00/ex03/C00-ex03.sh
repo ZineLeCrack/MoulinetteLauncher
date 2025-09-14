@@ -16,7 +16,7 @@ src_dir="ex03"
 
 if [[ $? -ne 0 ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Does not compile <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	"$executable" > "$script_dir/user_output"
