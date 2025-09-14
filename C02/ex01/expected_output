@@ -1,0 +1,6 @@
+dest = "123456789", src = "OK", n = 7  -->  dest = "OK\0\0\0\0\089", returned value = OK
+dest = "Hello", src = "World", n = 6  -->  dest = "World", returned value = OK
+dest = "", src = "", n = 2  -->  dest = "", returned value = OK
+dest = "42", src = "strcpy", n = 4  -->  dest = "strc", returned value = OK
+dest = "42", src = "", n = 1  -->  dest = "", returned value = OK
+dest = "", src = "42", n = 3  -->  dest = "42", returned value = OK
