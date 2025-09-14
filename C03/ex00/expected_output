@@ -1,0 +1,6 @@
+s1 = "Hello", s2 = "World"  -->  returned value = OK
+s1 = "42", s2 = ""  -->  returned value = OK
+s1 = "", s2 = "42"  -->  returned value = OK
+s1 = "42", s2 = "42"  -->  returned value = OK
+s1 = "", s2 = ""  -->  returned value = OK
+s1 = "ft_strlen", s2 = "ft_strcmp"  -->  returned value = OK
