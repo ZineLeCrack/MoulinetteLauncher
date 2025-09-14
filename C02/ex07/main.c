@@ -1,6 +1,6 @@
 #include "../../includes.h"
 
-int	ft_strupcase(char *str);
+char	*ft_strupcase(char *str);
 
 int	main()
 {
@@ -9,18 +9,20 @@ int	main()
 	putstr("\"");
 	putstr(str1);
 	putstr("\" --> \"");
-	ft_strupcase(str1);
+	char *return_value = ft_strupcase(str1);
 	putstr(str1);
-	putstr("\"\n");
+	putstr("\", returned_value = ");
+	putstr(return_value == str1 ? "OK\n" : "KO\n");
 
 	char	str2[] = "";
 
 	putstr("\"");
 	putstr(str2);
 	putstr("\" --> \"");
-	ft_strupcase(str2);
+	return_value = ft_strupcase(str2);
 	putstr(str2);
-	putstr("\"\n");
+	putstr("\", returned_value = ");
+	putstr(return_value == str2 ? "OK\n" : "KO\n");
 
 	char	str3[128];
 
@@ -32,25 +34,28 @@ int	main()
 	putstr("\"");
 	putstr(str3);
 	putstr("\" --> \"");
-	ft_strupcase(str3);
+	return_value = ft_strupcase(str3);
 	putstr(str3);
-	putstr("\"\n");
+	putstr("\", returned_value = ");
+	putstr(return_value == str3 ? "OK\n" : "KO\n");
 
 	char	str4[] = "LoremIpsumissimplydummytextoftheprintingandtypesettingindustryLoremIpsumhasbeentheindustrysstandarddummytexteversincetheswhenanunknownprintertookagalleyoftypeandscrambledittomakeatypespecimenbookIthassurvivednotonlyfivecenturiesbutalsotheleapintoelectronictypesettingremainingessentiallyunchangedItwaspopularisedintheswiththereleaseofLetrasetsheetscontainingLoremIpsumpassagesandmorerecentlywithdesktoppublishingsoftwarelikeAldusPageMakerincludingversionsofLoremIpsum";
 
 	putstr("\"");
 	putstr(str4);
 	putstr("\" --> \"");
-	ft_strupcase(str4);
+	return_value = ft_strupcase(str4);
 	putstr(str4);
-	putstr("\"\n");
+	putstr("\", returned_value = ");
+	putstr(return_value == str4 ? "OK\n" : "KO\n");
 
 	char	str5[] = "😁";
 
 	putstr("\"");
 	putstr(str5);
 	putstr("\" --> \"");
-	ft_strupcase(str5);
+	return_value = ft_strupcase(str5);
 	putstr(str5);
-	putstr("\"\n");
+	putstr("\", returned_value = ");
+	putstr(return_value == str5 ? "OK\n" : "KO\n");
 }
