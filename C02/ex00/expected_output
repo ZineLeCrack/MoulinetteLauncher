@@ -1,0 +1,6 @@
+dest = "123456789", src = "OK"  -->  dest = "OK\0456789", returned value = OK
+dest = "Hello", src = "World"  -->  dest = "World", returned value = OK
+dest = "", src = ""  -->  dest = "", returned value = OK
+dest = "42", src = "strcpy"  -->  dest = "strcpy", returned value = OK
+dest = "42", src = ""  -->  dest = "", returned value = OK
+dest = "", src = "42"  -->  dest = "42", returned value = OK
