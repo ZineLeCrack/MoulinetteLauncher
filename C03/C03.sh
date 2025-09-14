@@ -28,21 +28,21 @@ else
 	bash "$script_dir/ex00/C03-ex00.sh"
 fi
 
-# src_dir="ex01"
+src_dir="ex01"
 
-# echo
-# echo
+echo
+echo
 
-# echo -e "$MAGENTA==========================    ex01    ===========================$RESET"
-# echo -e "$MAGENTA========================== ft_strncpy ===========================$RESET"
+echo -e "$MAGENTA==========================    ex01    ===========================$RESET"
+echo -e "$MAGENTA========================== ft_strncmp ===========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex01/C02-ex01.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex01/C03-ex01.sh"
+fi
 
 # src_dir="ex02"
 

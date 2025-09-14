@@ -1,0 +1,9 @@
+s1 = "Hello", s2 = "World", n = 0  -->  returned value = OK
+s1 = "Hello", s2 = "World", n = 3  -->  returned value = OK
+s1 = "42", s2 = "", n = 1  -->  returned value = OK
+s1 = "", s2 = "42", n = 1  -->  returned value = OK
+s1 = "42", s2 = "42", n = 5  -->  returned value = OK
+s1 = "", s2 = "", n = 3  -->  returned value = OK
+s1 = "ft_strlen", s2 = "ft_strcmp", n = 5  -->  returned value = OK
+s1 = "ft_strlen", s2 = "ft_strcmp", n = 6  -->  returned value = OK
+s1 = "ft_strlen", s2 = "ft_strcmp", n = 7  -->  returned value = OK
