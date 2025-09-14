@@ -1,0 +1,6 @@
+src = "Hello", dest = "World", size = 5 --> dest = "Hell", returned value = OK
+src = "", dest = "", size = 5 --> dest = "", returned value = OK
+src = "42", dest = "", size = 3 --> dest = "42", returned value = OK
+src = "", dest = "Hello World !", size = 7 --> dest = "\0ello World !", returned value = OK
+src = "Hello", dest = "World", size = 0 --> dest = "World", returned value = OK
+src = "Hello", dest = "World", size = 15 --> dest = "Hello", returned value = OK
