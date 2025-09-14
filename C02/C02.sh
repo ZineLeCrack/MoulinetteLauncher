@@ -76,21 +76,21 @@ else
 	bash "$script_dir/ex03/C02-ex03.sh"
 fi
 
-# src_dir="ex04"
+src_dir="ex04"
 
-# echo
-# echo
+echo
+echo
 
-# echo -e "$MAGENTA======================        ex04         ======================$RESET"
-# echo -e "$MAGENTA====================== ft_ultimate_div_mod ======================$RESET"
+echo -e "$MAGENTA======================        ex04         ======================$RESET"
+echo -e "$MAGENTA====================== ft_str_is_lowercase ======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex04/C01-ex04.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex04/C02-ex04.sh"
+fi
 
 # src_dir="ex05"
 

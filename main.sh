@@ -8,7 +8,7 @@ MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
 echo -e "$YELLOW====================== Moulinette Launcher ======================$RESET"
-echo -e "$YELLOW========================== by rlebaill ==========================$RESET"
+echo -e "$YELLOW======================     by rlebaill     =====================$RESET"
 
 
 dir=$(basename $PWD)
