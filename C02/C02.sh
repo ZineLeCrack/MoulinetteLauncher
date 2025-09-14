@@ -134,16 +134,16 @@ else
 	bash "$script_dir/ex07/C02-ex07.sh"
 fi
 
-# src_dir="ex08"
+src_dir="ex08"
 
-# echo
-# echo -e "$MAGENTA========================      ex08       ========================$RESET"
-# echo -e "$MAGENTA======================== ft_sort_int_tab ========================$RESET"
+echo
+echo -e "$MAGENTA=========================     ex08      =========================$RESET"
+echo -e "$MAGENTA========================= ft_strlowcase ========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex08/C01-ex08.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex08/C02-ex08.sh"
+fi
