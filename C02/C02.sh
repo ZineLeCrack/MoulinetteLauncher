@@ -147,3 +147,17 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex08/C02-ex08.sh"
 fi
+
+src_dir="ex09"
+
+echo
+echo -e "$MAGENTA=======================       ex09       ========================$RESET"
+echo -e "$MAGENTA======================= ft_strcapitalize ========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex09/C02-ex09.sh"
+fi
