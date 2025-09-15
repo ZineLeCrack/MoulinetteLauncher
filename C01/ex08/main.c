@@ -28,9 +28,9 @@ int	main()
 
 	ft_sort_int_tab(tab2, 0);
 	
-	printf("[ %d ]  -->  ", tab3[1]);
+	printf("[ %d ]  -->  ", tab3[0]);
 	ft_sort_int_tab(tab3, 1);
-	printf("[ %d ]\n", tab3[1]);
+	printf("[ %d ]\n", tab3[0]);
 
 	printf("\n\n");
 
