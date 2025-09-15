@@ -44,21 +44,21 @@ else
 	bash "$script_dir/ex01/C07-ex01.sh"
 fi
 
-# src_dir="ex02"
+src_dir="ex02"
 
-# echo
-# echo
+echo
+echo
 
-# echo -e "$MAGENTA=========================     ex03      =========================$RESET"
-# echo -e "$MAGENTA========================= ft_rev_params =========================$RESET"
+echo -e "$MAGENTA=======================       ex03        =======================$RESET"
+echo -e "$MAGENTA======================= ft_ultimate_range =======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex02/C06-ex02.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex02/C07-ex02.sh"
+fi
 
 # src_dir="ex03"
 
