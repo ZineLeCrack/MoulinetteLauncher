@@ -26,10 +26,11 @@ int	main()
 
 	char	str3[128];
 
-	for (int i = 0; i < 128; i++) {
+	for (int i = 0; i < 127; i++) {
 		if (i + 1 == '\n' || i + 1 == '\r') str3[i] = '$';
 		else str3[i] = (char)(i + 1);
 	}
+	str3[127] = '\0';
 
 	putstr("\"");
 	putstr(str3);
