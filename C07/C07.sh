@@ -49,7 +49,7 @@ src_dir="ex02"
 echo
 echo
 
-echo -e "$MAGENTA=======================       ex03        =======================$RESET"
+echo -e "$MAGENTA=======================       ex02        =======================$RESET"
 echo -e "$MAGENTA======================= ft_ultimate_range =======================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
