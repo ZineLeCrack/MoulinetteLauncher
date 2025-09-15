@@ -1,0 +1,6 @@
+str = "Hello World", to_find = "W" --> return_value = "World"
+str = "Hello World", to_find = "Hello" --> return_value = "Hello World"
+str = "Hello World", to_find = "d" --> return_value = "d"
+str = "Hello World", to_find = "" --> return_value = "Hello World"
+str = "Hello World", to_find = "World" --> return_value = "World"
+str = "Hello World", to_find = "Hello World" --> return_value = "Hello World"

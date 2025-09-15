@@ -58,20 +58,4 @@ int	main()
 	printf("dest = \"%s\", src = \"%s\", n = 2  -->  ", s11, s12);
 	return_value = ft_strncat(s11, s12, 2);
 	printf("dest = \"%s\", src = \"%s\", returned value = %s\n", s11, s12, return_value == s11 ? "OK" : "KO");
-
-
-
-	// char	s5[] = "Hello";
-	// char	s6[] = "";
-
-	// printf("dest = \"%s\", src = \"%s\"  -->  ", s5, s6);
-	// return_value = ft_strncat(s5, s6);
-	// printf("dest = \"%s\", src = \"%s\", returned value = %s\n", s5, s6, return_value == s5 ? "OK" : "KO");
-
-	// char	s7[] = "";
-	// char	s8[] = "";
-
-	// printf("dest = \"%s\", src = \"%s\"  -->  ", s7, s8);
-	// return_value = ft_strncat(s7, s8);
-	// printf("dest = \"%s\", src = \"%s\", returned value = %s\n", s7, s8, return_value == s7 ? "OK" : "KO");
 }
