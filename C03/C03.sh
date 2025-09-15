@@ -60,21 +60,21 @@ else
 	bash "$script_dir/ex02/C03-ex02.sh"
 fi
 
-# src_dir="ex03"
+src_dir="ex03"
 
-# echo
-# echo
+echo
+echo
 
-# echo -e "$MAGENTA=======================       ex03        =======================$RESET"
-# echo -e "$MAGENTA======================= ft_str_is_numeric =======================$RESET"
+echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
+echo -e "$MAGENTA========================== ft_strncat ===========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex03/C02-ex03.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex03/C03-ex03.sh"
+fi
 
 # src_dir="ex04"
 
