@@ -92,16 +92,16 @@ else
 	bash "$script_dir/ex04/C04-ex04.sh"
 fi
 
-# src_dir="ex05"
+src_dir="ex05"
 
-# echo
-# echo -e "$MAGENTA==========================    ex05    ===========================$RESET"
-# echo -e "$MAGENTA========================== ft_strlcat ======================$RESET"
+echo
+echo -e "$MAGENTA=========================     ex05    ===========================$RESET"
+echo -e "$MAGENTA========================= ft_atoi_base ==========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex05/C03-ex05.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex05/C04-ex05.sh"
+fi
