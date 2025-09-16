@@ -10,9 +10,9 @@ RESET="\033[0m"
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
 executable="$script_dir/output"
-src_dir="ex02"
+src_dir="ex03"
 
-/bin/cc -Wall -Wextra -Werror "$src_dir/ft_ultimate_range.c" "$script_dir/main.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror "$src_dir/ft_strjoin.c" "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo
@@ -43,8 +43,6 @@ else
 		echo -e "${GREEN}Diff OK :)${RESET}"
 		echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	fi
-
-	
 
 	rm -f "$executable" "$script_dir/user_output"
 fi

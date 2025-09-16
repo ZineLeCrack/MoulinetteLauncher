@@ -29,7 +29,8 @@ else
 		echo -e "${RED}Diff KO :(${RESET}"
 	fi
 
-	valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible"
+	valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
+	valgrind "$executable" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"
 	
 	if [[ $? -ne 0 ]]; then
 		echo -e "$RED"
