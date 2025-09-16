@@ -44,7 +44,7 @@ else
 
 	len=${#HOME}
 
-	diff -au --color=always <(cut -c$((len+1))- "$script_dir/user_output") <(cut -c$((len+1))- "$script_dir/expected_output")
+	diff -au --color=always <(cut -c$((len+1))- "$script_dir/user_output") <(cut -c13- "$script_dir/expected_output")
 
 	if [[ $? -ne 0 ]]; then
 		echo
