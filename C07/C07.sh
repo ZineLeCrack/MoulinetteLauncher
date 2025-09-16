@@ -75,3 +75,19 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex03/C07-ex03.sh"
 fi
+
+src_dir="ex04"
+
+echo
+echo
+
+echo -e "$MAGENTA========================      ex04       ========================$RESET"
+echo -e "$MAGENTA======================== ft_convert_base ========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex04/C07-ex04.sh"
+fi

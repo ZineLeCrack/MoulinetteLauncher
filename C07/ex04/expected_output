@@ -1,0 +1,7 @@
+nbr = "42", base_from = "0123456789", base_to = "01" --> returned value = "101010"
+nbr = "42", base_from = "0123456789", base_to = "0123456789ABCDEF" --> returned value = "2A"
+nbr = "42", base_from = "0123456789", base_to = "poneyvif" --> returned value = "vn"
+nbr = "	   ---vn", base_from = "poneyvif", base_to = "0123456789" --> returned value = "-42"
+nbr = "	   ---vn", base_from = "poneyvif", base_to = "01" --> returned value = "-101010"
+nbr = "42", base_from = "1223456789", base_to = "01" --> returned value = "(null)"
+nbr = "42", base_from = "12 3456789", base_to = "01" --> returned value = "(null)"
