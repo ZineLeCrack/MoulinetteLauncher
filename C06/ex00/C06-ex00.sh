@@ -42,7 +42,9 @@ else
 	"$executable" "" >> "$script_dir/user_output"
 	rm -f "$executable"
 
-	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
+	len=${#HOME}
+
+	diff -au --color=always <(cut -c$((len+1))- "$script_dir/user_output") <(cut -c$((len+1))- "$script_dir/expected_output")
 
 	if [[ $? -ne 0 ]]; then
 		echo

@@ -15,14 +15,13 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 src_dir="ex00"
 
 echo
-echo
 
 echo -e "$MAGENTA==========================   ex00    ===========================$RESET"
 echo -e "$MAGENTA========================== ft_strdup ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex00/C07-ex00.sh"
@@ -31,14 +30,13 @@ fi
 src_dir="ex01"
 
 echo
-echo
 
 echo -e "$MAGENTA===========================   ex01   ============================$RESET"
 echo -e "$MAGENTA=========================== ft_range ============================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex01/C07-ex01.sh"
@@ -47,14 +45,13 @@ fi
 src_dir="ex02"
 
 echo
-echo
 
 echo -e "$MAGENTA=======================       ex02        =======================$RESET"
 echo -e "$MAGENTA======================= ft_ultimate_range =======================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex02/C07-ex02.sh"
@@ -63,14 +60,13 @@ fi
 src_dir="ex03"
 
 echo
-echo
 
 echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
 echo -e "$MAGENTA========================== ft_strjoin ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex03/C07-ex03.sh"
@@ -79,14 +75,13 @@ fi
 src_dir="ex04"
 
 echo
-echo
 
 echo -e "$MAGENTA========================      ex04       ========================$RESET"
 echo -e "$MAGENTA======================== ft_convert_base ========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex04/C07-ex04.sh"
@@ -95,14 +90,13 @@ fi
 src_dir="ex05"
 
 echo
-echo
 
 echo -e "$MAGENTA===========================   ex05   ============================$RESET"
 echo -e "$MAGENTA=========================== ft_split ============================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex05/C07-ex05.sh"

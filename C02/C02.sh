@@ -15,14 +15,13 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 src_dir="ex00"
 
 echo
-echo
 
 echo -e "$MAGENTA===========================   ex00    ===========================$RESET"
 echo -e "$MAGENTA=========================== ft_strcpy ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex00/C02-ex00.sh"
@@ -31,14 +30,13 @@ fi
 src_dir="ex01"
 
 echo
-echo
 
 echo -e "$MAGENTA==========================    ex01    ===========================$RESET"
 echo -e "$MAGENTA========================== ft_strncpy ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex01/C02-ex01.sh"
@@ -47,14 +45,13 @@ fi
 src_dir="ex02"
 
 echo
-echo
 
 echo -e "$MAGENTA========================      ex02       ========================$RESET"
 echo -e "$MAGENTA======================== ft_str_is_alpha ========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex02/C02-ex02.sh"
@@ -63,14 +60,13 @@ fi
 src_dir="ex03"
 
 echo
-echo
 
 echo -e "$MAGENTA=======================       ex03        =======================$RESET"
 echo -e "$MAGENTA======================= ft_str_is_numeric =======================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex03/C02-ex03.sh"
@@ -79,14 +75,13 @@ fi
 src_dir="ex04"
 
 echo
-echo
 
 echo -e "$MAGENTA======================        ex04         ======================$RESET"
 echo -e "$MAGENTA====================== ft_str_is_lowercase ======================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex04/C02-ex04.sh"
@@ -100,7 +95,7 @@ echo -e "$MAGENTA====================== ft_str_is_uppercase ====================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex05/C02-ex05.sh"
@@ -114,7 +109,7 @@ echo -e "$MAGENTA====================== ft_str_is_printable ====================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex06/C02-ex06.sh"
@@ -128,7 +123,7 @@ echo -e "$MAGENTA========================= ft_strupcase ========================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex07/C02-ex07.sh"
@@ -142,7 +137,7 @@ echo -e "$MAGENTA========================= ft_strlowcase =======================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex08/C02-ex08.sh"
@@ -156,7 +151,7 @@ echo -e "$MAGENTA======================= ft_strcapitalize ======================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex09/C02-ex09.sh"
@@ -170,7 +165,7 @@ echo -e "$MAGENTA========================== ft_strlcpy =========================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex10/C02-ex10.sh"
@@ -184,7 +179,7 @@ echo -e "$MAGENTA==================== ft_putstr_non_printable ==================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex11/C02-ex11.sh"
@@ -198,7 +193,7 @@ echo -e "$MAGENTA======================== ft_print_memory ======================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex12/C02-ex12.sh"

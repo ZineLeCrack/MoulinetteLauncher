@@ -15,14 +15,13 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 src_dir="ex00"
 
 echo
-echo
 
 echo -e "$MAGENTA===========================   ex00    ===========================$RESET"
 echo -e "$MAGENTA=========================== ft_strlen ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex00/C04-ex00.sh"
@@ -31,14 +30,13 @@ fi
 src_dir="ex01"
 
 echo
-echo
 
 echo -e "$MAGENTA===========================   ex01    ===========================$RESET"
 echo -e "$MAGENTA=========================== ft_putstr ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex01/C04-ex01.sh"
@@ -47,14 +45,13 @@ fi
 src_dir="ex02"
 
 echo
-echo
 
 echo -e "$MAGENTA===========================   ex02    ===========================$RESET"
 echo -e "$MAGENTA=========================== ft_putnbr ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex02/C04-ex02.sh"
@@ -63,14 +60,13 @@ fi
 src_dir="ex03"
 
 echo
-echo
 
 echo -e "$MAGENTA============================  ex03   ============================$RESET"
 echo -e "$MAGENTA============================ ft_atoi ============================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex03/C04-ex03.sh"
@@ -79,14 +75,13 @@ fi
 src_dir="ex04"
 
 echo
-echo
 
 echo -e "$MAGENTA=========================     ex04       ========================$RESET"
 echo -e "$MAGENTA========================= ft_putnbr_base ========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex04/C04-ex04.sh"
@@ -100,7 +95,7 @@ echo -e "$MAGENTA========================= ft_atoi_base ========================
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>> Nothing turn in <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
 	bash "$script_dir/ex05/C04-ex05.sh"
