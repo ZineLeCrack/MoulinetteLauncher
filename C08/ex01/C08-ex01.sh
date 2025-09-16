@@ -12,19 +12,23 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 executable="$script_dir/output"
 src_dir="ex01"
 
-/bin/cc -Wall -Wextra -Werror "$src_dir/ft_range.c" "$script_dir/main.c" -o "$executable"
+cp "ex01/ft_boolean.h" "$script_dir"
+/bin/cc -Wall -Wextra -Werror "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 else
-	"$executable" > "$script_dir/user_output"
+	"$executable" a >> "$script_dir/user_output"
+	"$executable" a a >> "$script_dir/user_output"
+	"$executable" "" "" >> "$script_dir/user_output"
+	"$executable" "Hello World" >> "$script_dir/user_output"
+	"$executable" H e l l o W o r l d >> "$script_dir/user_output"
 
 	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
 	if [[ $? -ne 0 ]]; then
-
 		echo
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
@@ -39,11 +43,9 @@ else
 			echo -e "$RESET"
 			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 			echo -e "${RED}Memory check KO :(${RESET}"
-
 		fi
 
 	else
-
 		valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
 		valgrind "$executable" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"
 
@@ -63,5 +65,5 @@ else
 
 	fi fi
 
-	rm -f "$executable" "$script_dir/user_output"
+	rm -f "$executable" "$script_dir/user_output" "$script_dir/ft_boolean.h"
 fi

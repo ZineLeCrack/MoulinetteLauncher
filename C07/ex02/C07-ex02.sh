@@ -24,27 +24,44 @@ else
 	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
 	if [[ $? -ne 0 ]]; then
+
 		echo
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
-	fi
 
-	valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
-	valgrind "$executable" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"
-	
-	if [[ $? -ne 0 ]]; then
-		echo -e "$RED"
-		valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes "$executable"
-		echo -e "$RESET"
-		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-		echo -e "${RED}Memory check KO :(${RESET}"
+		valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
+		valgrind "$executable" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"
+
+		if [[ $? -ne 0 ]]; then
+
+			echo -e "$RED"
+			valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes "$executable"
+			echo -e "$RESET"
+			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+			echo -e "${RED}Memory check KO :(${RESET}"
+
+		fi
+
 	else
-		echo
-		echo -e "${GREEN}Diff OK :)${RESET}"
-		echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-	fi
 
-	
+		valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
+		valgrind "$executable" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"
+
+		if [[ $? -ne 0 ]]; then
+
+			echo -e "$RED"
+			valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes "$executable"
+			echo -e "$RESET"
+			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+			echo -e "${RED}Memory check KO :(${RESET}"
+
+		else
+
+			echo
+			echo -e "${GREEN}Diff OK :)${RESET}"
+			echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+
+	fi fi
 
 	rm -f "$executable" "$script_dir/user_output"
 fi
