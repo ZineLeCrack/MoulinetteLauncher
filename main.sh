@@ -8,7 +8,7 @@ MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
 echo -e "$YELLOW====================== Moulinette Launcher ======================$RESET"
-echo -e "$YELLOW======================     by rlebaill     =====================$RESET"
+echo -e "$YELLOW======================     by rlebaill     ======================$RESET"
 
 
 dir=$(basename $PWD)
@@ -125,9 +125,23 @@ else if [[ "$dir" == "C07" ]]; then
 	echo
 	echo -e "${MAGENTA}Thank you <3${RESET}"
 
+else if [[ "$dir" == "C08" ]]; then
+
+	script_dir="$(dirname "${BASH_SOURCE[0]}")"
+	bash "$script_dir/C08/C08.sh"
+
+	echo
+	echo -e "$MAGENTA=================================================================$RESET"
+	echo
+	echo -e "${BLUE}Don't forget to check the NORMINETTE and FORBIDDEN FUNCTIONS !!!${RESET}"
+	echo -e "${BLUE}This moulinette doesn't check all possibilities.${RESET}"
+	echo -e "${BLUE}Do your own tests !${RESET}"
+	echo
+	echo -e "${MAGENTA}Thank you <3${RESET}"
+
 else
 
 	echo
 	echo -e "$RED================== Not in a project directory. ==================$RESET"
 
-fi fi fi fi fi fi fi fi
+fi fi fi fi fi fi fi fi fi

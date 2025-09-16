@@ -8,7 +8,7 @@ MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
 echo
-echo -e "$BLUE==========================     C03    ===========================$RESET"
+echo -e "$BLUE=========================     C03    ============================$RESET"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 

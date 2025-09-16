@@ -8,7 +8,7 @@ MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
 echo
-echo -e "$BLUE==========================     C05    ===========================$RESET"
+echo -e "$BLUE=========================     C05    ============================$RESET"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
@@ -16,8 +16,8 @@ src_dir="ex00"
 
 echo
 
-echo -e "$MAGENTA====================         ex00           ====================$RESET"
-echo -e "$MAGENTA==================== ft_iterative_factorial ====================$RESET"
+echo -e "$MAGENTA====================         ex00           =====================$RESET"
+echo -e "$MAGENTA==================== ft_iterative_factorial =====================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
