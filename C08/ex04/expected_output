@@ -1,0 +1,49 @@
+typedef struct s_stock_str
+{
+	int	size = 5;
+	char	*str = "Hello";
+	char	*copy = "Hello";
+}	t_stock_str;
+
+typedef struct s_stock_str
+{
+	int	size = 5;
+	char	*str = "World";
+	char	*copy = "World";
+}	t_stock_str;
+
+typedef struct s_stock_str
+{
+	int	size = 0;
+	char	*str = "";
+	char	*copy = "";
+}	t_stock_str;
+
+typedef struct s_stock_str
+{
+	int	size = 2;
+	char	*str = "42";
+	char	*copy = "42";
+}	t_stock_str;
+
+typedef struct s_stock_str
+{
+	int	size = 2;
+	char	*str = "Le";
+	char	*copy = "Le";
+}	t_stock_str;
+
+typedef struct s_stock_str
+{
+	int	size = 5;
+	char	*str = "Havre";
+	char	*copy = "Havre";
+}	t_stock_str;
+
+typedef struct s_stock_str
+{
+	int	size = 1;
+	char	*str = "!";
+	char	*copy = "!";
+}	t_stock_str;
+
