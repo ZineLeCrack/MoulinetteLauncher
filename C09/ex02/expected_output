@@ -1,0 +1,8 @@
+--- str = "Bonjour, je suis rlebaill !", charset = " " ---
+"Bonjour,", "je", "suis", "rlebaill", "!", (null)
+--- str = "Bonjour, je suis rlebaill !", charset = "" ---
+"Bonjour, je suis rlebaill !", (null)
+--- str = "Bonjour, je suis rlebaill !", charset = "i us" ---
+"Bonjo", "r,", "je", "rleba", "ll", "!", (null)
+--- str = "", charset = " " ---
+(null)
