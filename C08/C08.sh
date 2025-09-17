@@ -42,35 +42,35 @@ else
 	bash "$script_dir/ex01/C08-ex01.sh"
 fi
 
-# src_dir="ex02"
+src_dir="ex02"
 
-# echo
+echo
 
-# echo -e "$MAGENTA=======================       ex02        =======================$RESET"
-# echo -e "$MAGENTA======================= ft_ultimate_range =======================$RESET"
+echo -e "$MAGENTA===========================   ex02   ============================$RESET"
+echo -e "$MAGENTA=========================== ft_abs.h ============================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex02/C07-ex02.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex02/C08-ex02.sh"
+fi
 
-# src_dir="ex03"
+src_dir="ex03"
 
-# echo
+echo
 
-# echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
-# echo -e "$MAGENTA========================== ft_strjoin ===========================$RESET"
+echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
+echo -e "$MAGENTA========================== ft_point.h ===========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex03/C07-ex03.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex03/C08-ex03.sh"
+fi
 
 # src_dir="ex04"
 

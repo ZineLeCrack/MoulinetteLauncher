@@ -12,7 +12,7 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 executable="$script_dir/output"
 src_dir="ex00"
 
-cp "ex00/ft.h" "$script_dir"
+cp "$src_dir/ft.h" "$script_dir"
 /bin/cc -Wall -Wextra -Werror "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
@@ -21,10 +21,22 @@ if [[ $? -ne 0 ]]; then
 	echo -e "${RED}KO :(${RESET}"
 else
 
-	echo
-	echo -e "${GREEN}Diff OK :)${RESET}"
-	echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	norminette -R CheckDefine "$script_dir/ft.h" > "$script_dir/user_output"
 
-fi
+	if [[ $? -ne 0 ]]; then
+
+		echo -e "$RED"
+		norminette -R CheckDefine "$script_dir/ft.h" | grep "Error"
+		echo -e "$RESET"
+		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		echo -e "${RED}Norm check KO :(${RESET}"
+
+	else
+
+		echo
+		echo -e "${GREEN}Diff OK :)${RESET}"
+		echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+
+fi fi
 
 rm -f "$executable" "$script_dir/ft.h"

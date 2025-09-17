@@ -6,22 +6,34 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 08:47:04 by romain            #+#    #+#             */
-/*   Updated: 2025/09/17 09:10:55 by romain           ###   ########.fr       */
+/*   Updated: 2025/09/17 09:17:15 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes.h"
-#include "ft_abs.h"
+#include "ft_point.h"
+
+void	set_point(t_point *point, int x, int y)
+{
+	point->x = x;
+	point->y = y;
+}
 
 int	main(void)
 {
-	printf("ABS(%d) = %d\n", 1, ABS(1));
-	printf("ABS(%d) = %d\n", 42, ABS(42));
-	printf("ABS(%d) = %d\n", -42, ABS(-42));
-	printf("ABS(%d) = %d\n", 0, ABS(0));
-	printf("ABS(%d) = %d\n", -255, ABS(-255));
-	printf("ABS(%d) = %d\n", 1024, ABS(1024));
-	printf("ABS(%d) = %d\n", -1, ABS(-1));
-	printf("ABS(%d) = %d\n", INT_MAX, ABS(INT_MAX));
-	printf("ABS(%d) = %d\n", -INT_MAX, ABS(-INT_MAX));
+	t_point		point;
+
+	set_point(&point, 42, 21);
+	printf("(%d, %d)\n", point.x, point.y);
+
+	set_point(&point, 0, 0);
+	printf("(%d, %d)\n", point.x, point.y);
+
+	set_point(&point, 1024, -1024);
+	printf("(%d, %d)\n", point.x, point.y);
+
+	set_point(&point, INT_MAX, INT_MIN);
+	printf("(%d, %d)\n", point.x, point.y);
+
+	return (0);
 }

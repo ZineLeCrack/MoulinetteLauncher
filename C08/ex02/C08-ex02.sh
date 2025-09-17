@@ -10,25 +10,25 @@ RESET="\033[0m"
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
 executable="$script_dir/output"
-src_dir="ex01"
+src_dir="ex02"
 
-cp "ex01/ft_boolean.h" "$script_dir"
+cp "$src_dir/ft_abs.h" "$script_dir"
 /bin/cc -Wall -Wextra -Werror "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
+
 	echo
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
+
 else
-	"$executable" a >> "$script_dir/user_output"
-	"$executable" a a >> "$script_dir/user_output"
-	"$executable" "" "" >> "$script_dir/user_output"
-	"$executable" "Hello World" >> "$script_dir/user_output"
-	"$executable" H e l l o W o r l d >> "$script_dir/user_output"
+
+	"$executable" > "$script_dir/user_output"
 
 	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
 	if [[ $? -ne 0 ]]; then
+
 		echo
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
@@ -43,9 +43,11 @@ else
 			echo -e "$RESET"
 			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 			echo -e "${RED}Memory check KO :(${RESET}"
+
 		fi
 
 	else
+
 		valgrind "$executable" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
 		valgrind "$executable" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"
 
@@ -57,13 +59,25 @@ else
 			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 			echo -e "${RED}Memory check KO :(${RESET}"
 
-		else
+		else 
 
-			echo
-			echo -e "${GREEN}Diff OK :)${RESET}"
-			echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+			norminette -R CheckDefine "$script_dir/ft_abs.h" > "$script_dir/user_output"
 
-	fi fi
+			if [[ $? -ne 0 ]]; then
 
-	rm -f "$executable" "$script_dir/user_output" "$script_dir/ft_boolean.h"
+				echo -e "$RED"
+				norminette -R CheckDefine "$script_dir/ft_abs.h" | grep "Error"
+				echo -e "$RESET"
+				echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+				echo -e "${RED}Norm check KO :(${RESET}"
+
+			else
+
+				echo
+				echo -e "${GREEN}Diff OK :)${RESET}"
+				echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+
+	fi fi fi
+
+	rm -f "$executable" "$script_dir/user_output" "$script_dir/ft_abs.h"
 fi
