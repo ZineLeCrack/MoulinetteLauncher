@@ -1,4 +1,4 @@
-dest = "Hello", src = "World"  -->  dest = "HelloWorld"  src = "orld",returned value = OK
-dest = "", src = "World"  -->  dest = "World", src = "World", returned value = OK
-dest = "Hello", src = ""  -->  dest = "Hello", src = "", returned value = OK
-dest = "", src = ""  -->  dest = "", src = "", returned value = OK
+dest = "Hello", src = "World"  -->  dest = "HelloWorld", returned value = OK
+dest = "", src = "World"  -->  dest = "World", returned value = OK
+dest = "Hello", src = ""  -->  dest = "Hello", returned value = OK
+dest = "", src = ""  -->  dest = "", returned value = OK

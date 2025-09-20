@@ -1,7 +1,7 @@
-dest = "Hello", src = "World", n = 0  -->  dest = "Hello", src = "World", returned value = OK
-dest = "Hello", src = "World", n = 3  -->  dest = "HelloWor", src = "or", returned value = OK
-dest = "Hello", src = "World", n = 5  -->  dest = "HelloWorld"  src = "orld", returned value = OK
-dest = "Hello", src = "World", n = 7  -->  dest = "HelloWorld", src = "orld", returned value = OK
-dest = "", src = "World", n = 2  -->  dest = "Wo", src = "World", returned value = OK
-dest = "Hello", src = "", n = 2  -->  dest = "Hello", src = "", returned value = OK
-dest = "", src = "", n = 2  -->  dest = "", src = "", returned value = OK
+dest = "Hello", src = "World", n = 0  -->  dest = "Hello", returned value = OK
+dest = "Hello", src = "World", n = 3  -->  dest = "HelloWor", returned value = OK
+dest = "Hello", src = "World", n = 5  -->  dest = "HelloWorld", returned value = OK
+dest = "Hello", src = "World", n = 7  -->  dest = "HelloWorld", returned value = OK
+dest = "", src = "World", n = 2  -->  dest = "Wo", returned value = OK
+dest = "Hello", src = "", n = 2  -->  dest = "Hello", returned value = OK
+dest = "", src = "", n = 2  -->  dest = "", returned value = OK
