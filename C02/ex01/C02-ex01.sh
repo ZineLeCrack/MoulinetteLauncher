@@ -28,10 +28,19 @@ else
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
 	else
-		echo
-		echo -e "${GREEN}Diff OK :)${RESET}"
-		echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-	fi
+		norminette -R CheckForbiddenSourceHeader "$src_dir" > "$script_dir/user_output"
+
+		if [[ $? -ne 0 ]]; then
+			echo -e "$RED"
+			norminette -R CheckForbiddenSourceHeader "$src_dir" | grep "Error"
+			echo -e "$RESET"
+			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+			echo -e "${RED}Norm check KO :(${RESET}"
+		else
+			echo
+			echo -e "${GREEN}Diff OK :)${RESET}"
+			echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	fi fi
 
 	rm -f "$executable" "$script_dir/user_output"
 fi
