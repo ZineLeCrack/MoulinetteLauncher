@@ -11,6 +11,4 @@ int	main()
 	printf("\"%s\" --> %d\n", "😁", ft_str_is_printable("😁"));
 	char str[2] = { 31, 0 };
 	printf("\"US\" --> %d\n", ft_str_is_printable(str));
-	str[0] = 127;
-	printf("\"DEL\" --> %d\n", ft_str_is_printable(str));
 }
