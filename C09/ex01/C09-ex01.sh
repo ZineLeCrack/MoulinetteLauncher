@@ -15,7 +15,7 @@ src_dir="ex01"
 cp "$src_dir/Makefile" "$script_dir"
 cd "$script_dir"
 make > "$script_dir/user_output"
-/bin/cc -Wall -Wextra -Werror "$script_dir/main.c" "$script_dir/libft.a" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$script_dir/main.c" "$script_dir/libft.a" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 

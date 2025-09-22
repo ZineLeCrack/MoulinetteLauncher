@@ -12,7 +12,7 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 executable="$script_dir/output"
 src_dir="ex00"
 
-/bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_program_name.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_print_program_name.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo
@@ -23,22 +23,22 @@ else
 	rm -f "$executable"
 
 	executable="$script_dir/test"
-	/bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_program_name.c" -o "$executable"
+	/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_print_program_name.c" -o "$executable"
 	"$executable" non non non >> "$script_dir/user_output"
 	rm -f "$executable"
 
 	executable="$script_dir/ooOOoo"
-	/bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_program_name.c" -o "$executable"
+	/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_print_program_name.c" -o "$executable"
 	"$executable" pourquoi >> "$script_dir/user_output"
 	rm -f "$executable"
 
 	executable="$script_dir/4242"
-	/bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_program_name.c" -o "$executable"
+	/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_print_program_name.c" -o "$executable"
 	"$executable" "que faire ?" >> "$script_dir/user_output"
 	rm -f "$executable"
 
 	executable="$script_dir/Hello_World"
-	/bin/cc -Wall -Wextra -Werror "$src_dir/ft_print_program_name.c" -o "$executable"
+	/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_print_program_name.c" -o "$executable"
 	"$executable" "" >> "$script_dir/user_output"
 	rm -f "$executable"
 

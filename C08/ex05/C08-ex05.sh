@@ -13,7 +13,7 @@ executable="$script_dir/output"
 src_dir="ex05"
 
 cp "$script_dir/ft_stock_str.h" "$src_dir"
-/bin/cc -Wall -Wextra -Werror "$src_dir/ft_show_tab.c" "$script_dir/main.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_show_tab.c" "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 

@@ -13,7 +13,7 @@ executable="$script_dir/output"
 src_dir="ex02"
 
 cp "$src_dir/ft_abs.h" "$script_dir"
-/bin/cc -Wall -Wextra -Werror "$script_dir/main.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 

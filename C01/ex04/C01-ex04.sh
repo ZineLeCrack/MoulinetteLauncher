@@ -12,7 +12,7 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 executable="$script_dir/output"
 src_dir="ex04"
 
-/bin/cc -Wall -Wextra -Werror "$src_dir/ft_ultimate_div_mod.c" "$script_dir/main.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_ultimate_div_mod.c" "$script_dir/main.c" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo

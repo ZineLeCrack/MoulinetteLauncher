@@ -15,7 +15,7 @@ src_dir="ex00"
 cd "$src_dir"
 bash "libft_creator.sh"
 cd ..
-/bin/cc -Wall -Wextra -Werror "$script_dir/main.c" "$src_dir/libft.a" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$script_dir/main.c" "$src_dir/libft.a" -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 
