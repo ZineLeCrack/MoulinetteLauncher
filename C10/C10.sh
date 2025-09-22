@@ -16,8 +16,8 @@ src_dir="ex00"
 
 echo
 
-echo -e "$MAGENTA=======================      ex00     ===========================$RESET"
-echo -e "$MAGENTA=======================  display_file ===========================$RESET"
+echo -e "$MAGENTA========================     ex00     ===========================$RESET"
+echo -e "$MAGENTA======================== display_file ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo

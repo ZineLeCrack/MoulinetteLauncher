@@ -32,7 +32,7 @@ src_dir="ex01"
 echo
 
 echo -e "$MAGENTA========================      ex01      =========================$RESET"
-echo -e "$MAGENTA======================== ft_ultimate_ft =======================$RESET"
+echo -e "$MAGENTA======================== ft_ultimate_ft =========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo

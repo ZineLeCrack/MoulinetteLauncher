@@ -91,7 +91,7 @@ src_dir="ex05"
 
 echo
 echo -e "$MAGENTA==========================    ex05    ===========================$RESET"
-echo -e "$MAGENTA========================== ft_strlcat ======================$RESET"
+echo -e "$MAGENTA========================== ft_strlcat ===========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo

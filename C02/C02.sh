@@ -104,8 +104,8 @@ fi
 src_dir="ex06"
 
 echo
-echo -e "$MAGENTA======================        ex06         =======================$RESET"
-echo -e "$MAGENTA====================== ft_str_is_printable =======================$RESET"
+echo -e "$MAGENTA======================        ex06         ======================$RESET"
+echo -e "$MAGENTA====================== ft_str_is_printable ======================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
@@ -133,7 +133,7 @@ src_dir="ex08"
 
 echo
 echo -e "$MAGENTA=========================     ex08      =========================$RESET"
-echo -e "$MAGENTA========================= ft_strlowcase ========================$RESET"
+echo -e "$MAGENTA========================= ft_strlowcase =========================$RESET"
 
 if [[ ! -d "$src_dir" ]]; then
 	echo
