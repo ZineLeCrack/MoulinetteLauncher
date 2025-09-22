@@ -65,8 +65,6 @@ else
 	"$executable" "$script_dir/test.txt" >> "$script_dir/user_stdin_output" 2>> "$script_dir/user_stderr_output"
 	cat "$script_dir/user_stdin_output" "$script_dir/user_stderr_output" >> "$script_dir/user_output"
 
-	cat	"$script_dir/user_output"
-
 	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
 	if [[ $? -ne 0 ]]; then
