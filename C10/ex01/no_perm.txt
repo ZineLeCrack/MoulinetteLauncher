@@ -1,1 +1,10 @@
-toto
+• Create a program called ft_cat, which performs the same function as the system’s
+cat command-line tool.
+• You don’t need to handle options.
+• The submission directory should contain a Makefile with the following rules: all,
+clean, fclean.
+• You may use the variable errno (refer to the man page for errno).
+• You should read the manual pages of all the authorized functions.
+• You must complete this exercise by declaring a fixed-size array. This array should
+have a size limited to slightly less than 30 ko. To test this size limit, use the ulimit
+command in your shell.
