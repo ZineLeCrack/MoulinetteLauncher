@@ -42,17 +42,17 @@ else
 	bash "$script_dir/ex01/C10-ex01.sh"
 fi
 
-# src_dir="ex02"
+src_dir="ex02"
 
-# echo
+echo
 
-# echo -e "$MAGENTA===========================   ex02   ============================$RESET"
-# echo -e "$MAGENTA=========================== ft_split ============================$RESET"
+echo -e "$MAGENTA============================  ex02   ============================$RESET"
+echo -e "$MAGENTA============================ ft_tail ============================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex02/C09-ex02.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex02/C10-ex02.sh"
+fi
