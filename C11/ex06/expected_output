@@ -1,0 +1,6 @@
+Before:	tab = ["42", " ", "Le", " ", "Havre", " ", "!", ""]
+After:	tab = ["", " ", " ", " ", "!", "42", "Havre", "Le"]
+Before:	tab = ["Hello"]
+After:	tab = ["Hello"]
+Before:	tab = ["a", "z", "t", "w", "s", "g", "j", "c"]
+After:	tab = ["a", "c", "g", "j", "s", "t", "w", "z"]

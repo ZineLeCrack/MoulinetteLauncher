@@ -101,3 +101,18 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex05/C11-ex05.sh"
 fi
+
+src_dir="ex06"
+
+echo
+
+echo -e "$MAGENTA======================        ex06        =======================$RESET"
+echo -e "$MAGENTA====================== ft_sort_string_tab =======================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex06/C11-ex06.sh"
+fi
