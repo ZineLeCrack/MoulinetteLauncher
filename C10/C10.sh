@@ -56,3 +56,18 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex02/C10-ex02.sh"
 fi
+
+src_dir="ex03"
+
+echo
+
+echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
+echo -e "$MAGENTA========================== ft_hexdump ===========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex03/C10-ex03.sh"
+fi
