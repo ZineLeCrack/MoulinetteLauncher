@@ -167,9 +167,23 @@ else if [[ "$dir" == "C10" ]]; then
 	echo
 	echo -e "${MAGENTA}Thank you <3${RESET}"
 
+else if [[ "$dir" == "C11" ]]; then
+
+	script_dir="$(dirname "${BASH_SOURCE[0]}")"
+	bash "$script_dir/C11/C11.sh"
+
+	echo
+	echo -e "$MAGENTA=================================================================$RESET"
+	echo
+	echo -e "${BLUE}Don't forget to check the NORMINETTE and FORBIDDEN FUNCTIONS !!!${RESET}"
+	echo -e "${BLUE}This moulinette doesn't check all possibilities.${RESET}"
+	echo -e "${BLUE}Do your own tests !${RESET}"
+	echo
+	echo -e "${MAGENTA}Thank you <3${RESET}"
+
 else
 
 	echo
 	echo -e "$RED================== Not in a project directory. ==================$RESET"
 
-fi fi fi fi fi fi fi fi fi fi fi
+fi fi fi fi fi fi fi fi fi fi fi fi

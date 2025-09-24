@@ -1,0 +1,7 @@
+>>>>>>>>>> tab = (1, 2, 3, 4) : ft_putnbr <<<<<<<<<<
+1
+2
+3
+4
+>>>>>>>>> tab = "42 Le Havre" : ft_putchar <<<<<<<<<
+42 Le Havre
