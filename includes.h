@@ -9,5 +9,9 @@
 
 void	putstr(char const *str)
 {
+	if (!str) {
+		write(1, "(null)", 6);
+		return ;
+	}
 	while (write(1, str, *str != 0)) str++;
 }
