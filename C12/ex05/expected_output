@@ -1,0 +1,7 @@
+>>>>>>>>>>>>>>>>>>>>>>> ["Havre", "Le", "42"] <<<<<<<<<<<<<<<<<<<<<<<
+returned value: "42" --> "Le" --> "Havre"
+>>> ["bien", "c'est", "chaînées", "listes", "les", "comprendre", <<<<
+>>>>>>>>> "à", "commences", "tu", "que", "semblerait", "Il"] <<<<<<<<
+returned value: "Il" --> "semblerait" --> "que" --> "tu" --> "commences" --> "à" --> "comprendre" --> "les" --> "listes" --> "chaînées" --> "c'est" --> "bien"
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+returned value: (null)
