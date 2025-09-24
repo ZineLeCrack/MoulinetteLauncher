@@ -1,0 +1,10 @@
+>>>>> tab = ["42", "Le", "Havre", "!"] : is_empty <<<<<
+>>>>> tab = ["Hello", "", "World", "!"] : is_empty <<<<
+>>>>>>>>> tab = ["1", "", "2", ""] : is_empty <<<<<<<<<
+>>>>>>>>>>>>>>>> tab = [""] : is_empty <<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>> tab = [] : is_empty <<<<<<<<<<<<<<<<<
+returned value: 0
+returned value: 1
+returned value: 1
+returned value: 1
+returned value: 0
