@@ -27,20 +27,20 @@ else
 	bash "$script_dir/ex00/C12-ex00.sh"
 fi
 
-# src_dir="ex01"
+src_dir="ex01"
 
-# echo
+echo
 
-# echo -e "$MAGENTA============================  ex01  =============================$RESET"
-# echo -e "$MAGENTA============================ ft_map =============================$RESET"
+echo -e "$MAGENTA======================        ex01        =======================$RESET"
+echo -e "$MAGENTA====================== ft_list_push_front =======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex01/C11-ex01.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex01/C12-ex01.sh"
+fi
 
 # src_dir="ex02"
 
