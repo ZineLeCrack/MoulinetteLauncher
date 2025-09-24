@@ -18,23 +18,40 @@ int	is_empty2(char *str)
 
 int main()
 {
+	int	returned_value;
+
 	putstr(">>>>> tab = [\"42\", \"Le\", \"Havre\", \"!\"] : is_empty <<<<<\n");
 	char	*tab1[] = { "42", "Le", "Havre", "!", NULL };
-	printf("returned value: %d\n", ft_any(tab1, is_empty1));
+	putstr("returned value: ");
+	returned_value = ft_any(tab1, is_empty1) + '0';
+	write(1, &returned_value, 1);
+	putstr("\n");
 
 	putstr(">>>>> tab = [\"Hello\", \"\", \"World\", \"!\"] : is_empty <<<<\n");
 	char	*tab2[] = { "Hello", "", "World", "!", NULL };
-	printf("returned value: %d\n", ft_any(tab2, is_empty2));
+	putstr("returned value: ");
+	returned_value = ft_any(tab2, is_empty2) + '0';
+	write(1, &returned_value, 1);
+	putstr("\n");
 
 	putstr(">>>>>>>>> tab = [\"1\", \"\", \"2\", \"\"] : is_empty <<<<<<<<<\n");
 	char	*tab3[] = { "1", "", "2", "", NULL };
-	printf("returned value: %d\n", ft_any(tab3, is_empty1));
+	putstr("returned value: ");
+	returned_value = ft_any(tab3, is_empty1) + '0';
+	write(1, &returned_value, 1);
+	putstr("\n");
 
 	putstr(">>>>>>>>>>>>>>>> tab = [\"\"] : is_empty <<<<<<<<<<<<<<<<\n");
 	char	*tab4[] = { "", NULL };
-	printf("returned value: %d\n", ft_any(tab4, is_empty2));
+	putstr("returned value: ");
+	returned_value = ft_any(tab4, is_empty2) + '0';
+	write(1, &returned_value, 1);
+	putstr("\n");
 
 	putstr(">>>>>>>>>>>>>>>>> tab = [] : is_empty <<<<<<<<<<<<<<<<<\n");
 	char	*tab5[] = { NULL };
-	printf("returned value: %d\n", ft_any(tab5, is_empty1));
+	putstr("returned value: ");
+	returned_value = ft_any(tab5, is_empty1) + '0';
+	write(1, &returned_value, 1);
+	putstr("\n");
 }
