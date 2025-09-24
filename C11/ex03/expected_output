@@ -1,0 +1,8 @@
+>>>>>>>>>> tab = ["42", "Le", "Havre", "!"] : first_byte <<<<<<<<<<<
+>>>>>>>> tab = ["", "1", "2", "3", "4", "5"] : first_byte <<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>> tab = [] : first_byte <<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>> tab = ["", "", "", ""] : first_byte <<<<<<<<<<<<<<<<
+returned value: 4
+returned value: 5
+returned value: 0
+returned value: 0

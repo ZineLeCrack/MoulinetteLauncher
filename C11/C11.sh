@@ -57,20 +57,20 @@ else
 	bash "$script_dir/ex02/C11-ex02.sh"
 fi
 
-# src_dir="ex03"
+src_dir="ex03"
 
-# echo
+echo
 
-# echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
-# echo -e "$MAGENTA========================== ft_strjoin ===========================$RESET"
+echo -e "$MAGENTA==========================    ex03     ==========================$RESET"
+echo -e "$MAGENTA========================== ft_count_if ==========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex03/C07-ex03.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex03/C11-ex03.sh"
+fi
 
 # src_dir="ex04"
 
