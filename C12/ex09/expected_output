@@ -1,0 +1,13 @@
+>>>>>>>>>>>>>>>>>>>>>>> ["42", "Le", "Havre"] <<<<<<<<<<<<<<<<<<<<<<<
+list: "42" --> "Le" --> "Havre"
+function: print
+ee
+>>>>>>>>> ["Il", "semblerait", "que", "tu", "commences", "à", <<<<<<<<
+>>> "comprendre", "les", "listes", "chaînées", "c'est", "bien"] <<<<
+list: "Il" --> "semblerait" --> "que" --> "tu" --> "commences" --> "à" --> "comprendre" --> "les" --> "listes" --> "chaînées" --> "c'est" --> "bien"
+function: print
+eeeeeeeeeeee
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+list: (null)
+function: print
+
