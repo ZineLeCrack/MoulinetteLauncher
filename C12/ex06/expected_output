@@ -1,0 +1,10 @@
+>>>>>>>>>>>>>>>>>>>>>>> ["42", "Le", "Havre"] <<<<<<<<<<<<<<<<<<<<<<<
+list: "42" --> "Le" --> "Havre"
+Cleaning...
+>>>>>>>>> "Il", "semblerait", "que", "tu", "commences", "à"] <<<<<<<<
+>>> ["comprendre", "les", "listes", "chaînées", "c'est", "bien", <<<<
+list: "Il" --> "semblerait" --> "que" --> "tu" --> "commences" --> "à" --> "comprendre" --> "les" --> "listes" --> "chaînées" --> "c'est" --> "bien"
+Cleaning...
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+list: (null)
+Cleaning...

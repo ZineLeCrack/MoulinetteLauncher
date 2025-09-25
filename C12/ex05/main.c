@@ -8,6 +8,20 @@ typedef struct s_list
 
 t_list	*ft_list_push_strs(int size, char **strs);
 
+t_list	*ft_create_elem(void *data)
+{
+	t_list	*created;
+
+	created = NULL;
+	created = malloc(sizeof(t_list));
+	if (created)
+	{
+		created->data = data;
+		created->next = NULL;
+	}
+	return (created);
+}
+
 int	main(void)
 {
 	t_list	*begin;
