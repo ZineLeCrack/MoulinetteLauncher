@@ -15,12 +15,20 @@ int	main(void)
 	root->left = btree_create_node("41");
 	root->right = btree_create_node("43");
 
-	putstr("  ");
+	putstr("              ");
 	putstr(root->item);
-	putstr("\n");
+	putstr("\n      ");
 	putstr(root->left->item);
-	putstr("  ");
+	putstr("              ");
 	putstr(root->right->item);
+	putstr("\n");
+	putstr((char *)root->left->left);
+	putstr("  ");
+	putstr((char *)root->left->right);
+	putstr("  ");
+	putstr((char *)root->right->left);
+	putstr("  ");
+	putstr((char *)root->right->right);
 	putstr("\n");
 
 	free(root->left);
