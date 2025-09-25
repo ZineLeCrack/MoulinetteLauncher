@@ -1,0 +1,13 @@
+>>>>>>>>>>>>>>>>>>>>>>> ["42", "Le", "Havre"] <<<<<<<<<<<<<<<<<<<<<<<
+list: "42" --> "Le" --> "Havre"
+function: ft_strcmp / data_ref = "42"
+returned value = "42"
+>>>>>>>>> ["Il", "semblerait", "que", "tu", "commences", "à", <<<<<<<<
+>>> "comprendre", "les", "listes", "chaînées", "c'est", "bien"] <<<<
+list: "Il" --> "semblerait" --> "que" --> "tu" --> "commences" --> "à" --> "comprendre" --> "les" --> "listes" --> "chaînées" --> "c'est" --> "bien"
+function: ft_strcmp / data_ref = "42"
+returned value = (null)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+list: (null)
+function: ft_strcmp / data_ref = "42"
+returned value = (null)
