@@ -161,3 +161,18 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex09/C12-ex09.sh"
 fi
+
+src_dir="ex10"
+
+echo
+
+echo -e "$MAGENTA======================        ex10        =======================$RESET"
+echo -e "$MAGENTA====================== ft_list_foreach_if =======================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex10/C12-ex10.sh"
+fi
