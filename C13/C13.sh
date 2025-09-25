@@ -27,50 +27,50 @@ else
 	bash "$script_dir/ex00/C13-ex00.sh"
 fi
 
-# src_dir="ex01"
+src_dir="ex01"
 
-# echo
+echo
 
-# echo -e "$MAGENTA======================        ex01        =======================$RESET"
-# echo -e "$MAGENTA====================== ft_list_push_front =======================$RESET"
+echo -e "$MAGENTA======================        ex01        =======================$RESET"
+echo -e "$MAGENTA====================== btree_apply_prefix =======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex01/C12-ex01.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex01/C13-ex01.sh"
+fi
 
-# src_dir="ex02"
+src_dir="ex02"
 
-# echo
+echo
 
-# echo -e "$MAGENTA=========================     ex02     ==========================$RESET"
-# echo -e "$MAGENTA========================= ft_list_size ==========================$RESET"
+echo -e "$MAGENTA=======================       ex02        =======================$RESET"
+echo -e "$MAGENTA======================= btree_apply_infix =======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex02/C12-ex02.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex02/C13-ex02.sh"
+fi
 
-# src_dir="ex03"
+src_dir="ex03"
 
-# echo
+echo
 
-# echo -e "$MAGENTA=========================     ex03     ==========================$RESET"
-# echo -e "$MAGENTA========================= ft_list_last ==========================$RESET"
+echo -e "$MAGENTA=========================     ex03     ==========================$RESET"
+echo -e "$MAGENTA========================= ft_list_last ==========================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex03/C12-ex03.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex03/C13-ex03.sh"
+fi
 
 # src_dir="ex04"
 
