@@ -1,0 +1,20 @@
+>>>>>>>>>>>>>>>>>>>>>>> ["42", "Le", "Havre"] <<<<<<<<<<<<<<<<<<<<<<<
+list: "42" --> "Le" --> "Havre"
+at 2: Havre
+at 0: 42
+at 8: (null)
+>>>>>>>>> ["Il", "semblerait", "que", "tu", "commences", "à", <<<<<<<<
+>>> "comprendre", "les", "listes", "chaînées", "c'est", "bien"] <<<<
+list: "Il" --> "semblerait" --> "que" --> "tu" --> "commences" --> "à" --> "comprendre" --> "les" --> "listes" --> "chaînées" --> "c'est" --> "bien"
+"
+at 1: semblerait
+at 7: les
+at 5: à
+at 9: chaînées
+at 11: bien
+at 12: (null)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+list: (null)
+at 0: (null)
+at 2: (null)
+at 42: (null)
