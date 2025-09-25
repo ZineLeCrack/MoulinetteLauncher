@@ -266,3 +266,18 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex16/C12-ex16.sh"
 fi
+
+src_dir="ex17"
+
+echo
+
+echo -e "$MAGENTA=====================         ex17         ======================$RESET"
+echo -e "$MAGENTA===================== ft_sorted_list_merge =====================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex17/C12-ex17.sh"
+fi
