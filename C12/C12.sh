@@ -131,3 +131,18 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex07/C12-ex07.sh"
 fi
+
+src_dir="ex08"
+
+echo
+
+echo -e "$MAGENTA=======================       ex08      =========================$RESET"
+echo -e "$MAGENTA======================= ft_list_reverse =========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex08/C12-ex08.sh"
+fi
