@@ -117,17 +117,17 @@ else
 	bash "$script_dir/ex06/C13-ex06.sh"
 fi
 
-# src_dir="ex07"
+src_dir="ex07"
 
-# echo
+echo
 
-# echo -e "$MAGENTA==========================    ex07    ===========================$RESET"
-# echo -e "$MAGENTA========================== ft_list_at ===========================$RESET"
+echo -e "$MAGENTA=====================         ex07         ======================$RESET"
+echo -e "$MAGENTA===================== btree_apply_by_level ======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex07/C12-ex07.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex07/C13-ex07.sh"
+fi

@@ -1,0 +1,13 @@
+     42
+    /  \
+  44    40
+  /\    /\
+45 43  41 39
+
+Level: 0, first: 42
+Level: 1, first: 40
+Level: 2, first: 39
+Level: 2, 41
+Level: 1, 44
+Level: 2, 43
+Level: 2, 45
