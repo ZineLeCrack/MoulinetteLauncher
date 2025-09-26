@@ -1,0 +1,51 @@
+(null)
+
+returned value: 0
+
+42
+
+returned value: 1
+
+  42
+  /
+44
+
+returned value: 2
+
+  42
+  /\
+44  40
+
+returned value: 2
+
+     42
+    /  \
+  44    40
+  /
+45
+
+returned value: 3
+
+     42
+    /  \
+  44    40
+  /\
+45 43
+
+returned value: 3
+
+     42
+    /  \
+  44    40
+  /\    /
+45 43  41
+
+returned value: 3
+
+     42
+    /  \
+  44    40
+  /\    /\
+45 43  41 39
+
+returned value: 3
