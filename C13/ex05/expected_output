@@ -1,0 +1,20 @@
+     42
+    /  \
+  44    40
+  /\    /\
+45 43  41 39
+
+Searching "42"...
+returned_value: OK
+
+Searching "45"...
+returned_value: OK
+
+Searching "39"...
+returned_value: OK
+
+Searching "46"...
+returned_value: OK
+
+Searching "37"...
+returned_value: OK

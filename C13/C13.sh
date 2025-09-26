@@ -87,20 +87,20 @@ else
 	bash "$script_dir/ex04/C13-ex04.sh"
 fi
 
-# src_dir="ex05"
+src_dir="ex05"
 
-# echo
+echo
 
-# echo -e "$MAGENTA=======================       ex05        =======================$RESET"
-# echo -e "$MAGENTA======================= ft_list_push_strs =======================$RESET"
+echo -e "$MAGENTA=======================       ex05        =======================$RESET"
+echo -e "$MAGENTA======================= btree_search_item =======================$RESET"
 
-# if [[ ! -d "$src_dir" ]]; then
-# 	echo
-# 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
-# 	echo -e "${RED}KO :(${RESET}"
-# else
-# 	bash "$script_dir/ex05/C12-ex05.sh"
-# fi
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex05/C13-ex05.sh"
+fi
 
 # src_dir="ex06"
 
