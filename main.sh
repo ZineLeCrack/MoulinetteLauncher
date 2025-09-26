@@ -10,7 +10,6 @@ RESET="\033[0m"
 echo -e "$YELLOW====================== Moulinette Launcher ======================$RESET"
 echo -e "$YELLOW======================     by rlebaill     ======================$RESET"
 
-
 dir=$(basename $PWD)
 
 if [[ "$dir" == "C00" ]]; then
