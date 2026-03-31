@@ -12,7 +12,21 @@ echo -e "$YELLOW======================     by rlebaill     =====================
 
 dir=$(basename $PWD)
 
-if [[ "$dir" == "C00" ]]; then
+
+if [[ "$dir" == "SHELL00" ]]; then
+
+	script_dir="$(dirname "${BASH_SOURCE[0]}")"
+	bash "$script_dir/SHELL00/SHELL00.sh"
+
+	echo
+	echo -e "$MAGENTA=================================================================$RESET"
+	echo
+	echo -e "${BLUE}This moulinette doesn't check all possibilities.${RESET}"
+	echo -e "${BLUE}Do your own tests !${RESET}"
+	echo
+	echo -e "${MAGENTA}Thank you <3${RESET}"
+
+else if [[ "$dir" == "C00" ]]; then
 
 	script_dir="$(dirname "${BASH_SOURCE[0]}")"
 	bash "$script_dir/C00/C00.sh"
@@ -213,4 +227,4 @@ else
 	echo
 	echo -e "$RED================== Not in a project directory. ==================$RESET"
 
-fi fi fi fi fi fi fi fi fi fi fi fi fi fi
+fi fi fi fi fi fi fi fi fi fi fi fi fi fi fi
