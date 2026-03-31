@@ -27,6 +27,8 @@ else
 	bash "$script_dir/ex00/SHELL00-ex00.sh"
 fi
 
+src_dir="ex01"
+
 echo
 
 echo -e "$MAGENTA==========================     ex01      ========================$RESET"
@@ -39,6 +41,8 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex01/SHELL00-ex01.sh"
 fi
+
+src_dir="ex02"
 
 echo
 
@@ -53,6 +57,8 @@ else
 	bash "$script_dir/ex02/SHELL00-ex02.sh"
 fi
 
+src_dir="ex03"
+
 echo
 
 echo -e "$MAGENTA==========================     ex03     =========================$RESET"
@@ -65,6 +71,8 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex03/SHELL00-ex03.sh"
 fi
+
+src_dir="ex04"
 
 echo
 
@@ -79,6 +87,8 @@ else
 	bash "$script_dir/ex04/SHELL00-ex04.sh"
 fi
 
+src_dir="ex05"
+
 echo
 
 echo -e "$MAGENTA=========================      ex05       =======================$RESET"
@@ -91,6 +101,8 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex05/SHELL00-ex05.sh"
 fi
+
+src_dir="ex06"
 
 echo
 
@@ -105,6 +117,8 @@ else
 	bash "$script_dir/ex06/SHELL00-ex06.sh"
 fi
 
+src_dir="ex07"
+
 echo
 
 echo -e "$MAGENTA=============================  ex07  ============================$RESET"
@@ -118,6 +132,8 @@ else
 	bash "$script_dir/ex07/SHELL00-ex07.sh"
 fi
 
+src_dir="ex08"
+
 echo
 
 echo -e "$MAGENTA============================   ex08  ============================$RESET"
@@ -130,6 +146,8 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex08/SHELL00-ex08.sh"
 fi
+
+src_dir="ex09"
 
 echo
 
