@@ -56,3 +56,78 @@ if [[ ! -d "$src_dir" ]]; then
 else
 	bash "$script_dir/ex03/SHELL01-ex03.sh"
 fi
+
+src_dir="ex04"
+
+echo
+
+echo -e "$MAGENTA=============================  ex04  ============================$RESET"
+echo -e "$MAGENTA=============================  MAC   ============================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex04/SHELL01-ex04.sh"
+fi
+
+src_dir="ex05"
+
+echo
+
+echo -e "$MAGENTA======================         ex05          ====================$RESET"
+echo -e "$MAGENTA======================  Can you create it ?  ====================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex05/SHELL01-ex05.sh"
+fi
+
+src_dir="ex06"
+
+echo
+
+echo -e "$MAGENTA=============================  ex06  ============================$RESET"
+echo -e "$MAGENTA=============================  Skip  ============================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex06/SHELL01-ex06.sh"
+fi
+
+src_dir="ex07"
+
+echo
+
+echo -e "$MAGENTA===========================    ex07    ==========================$RESET"
+echo -e "$MAGENTA===========================  r_dwssap  ==========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex07/SHELL01-ex07.sh"
+fi
+
+src_dir="ex08"
+
+echo
+
+echo -e "$MAGENTA==========================     ex08     =========================$RESET"
+echo -e "$MAGENTA==========================  add_chelou  =========================$RESET"
+
+if [[ ! -d "$src_dir" ]]; then
+	echo
+	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> Nothing turned in <<<<<<<<<<<<<<<<<<<<<<$RESET"
+	echo -e "${RED}KO :(${RESET}"
+else
+	bash "$script_dir/ex08/SHELL01-ex08.sh"
+fi

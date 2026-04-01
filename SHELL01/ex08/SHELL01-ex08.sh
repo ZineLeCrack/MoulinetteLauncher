@@ -8,18 +8,13 @@ MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
-src_dir="ex03"
+src_dir="ex08"
 
-touch "$script_dir/test0"
-touch "$script_dir/test1"
-mkdir "$script_dir/testd"
-touch "$script_dir/testd/test2"
-touch "$script_dir/testd/test3"
-
-chmod 777 "$src_dir/count_files.sh"
-cp "$src_dir/count_files.sh" "$script_dir/count_files.sh"
-cd "$script_dir/"
-./count_files.sh > "$script_dir/user_output"
+export FT_NBR1="\"\"\!\"\"\!\"\"\!\"\"\!\"\"\!\"\""
+export FT_NBR2="dcrcmcmooododmrrrmorcmcrmomo"
+chmod 777 "$src_dir/add_chelou.sh"
+echo $FT_NBR1 + $FT_NBR2 | sed 's/\\/1/g' | sed 's/?/3/g' | sed 's/!/4/g' | sed "s/\'/0/g" | sed "s/\"/2/g" | tr "mrdoc" "01234" | xargs echo "obase=13; ibase=5;" | bc | tr "0123456789ABC" "gtaio luSnemf" > "$script_dir/expected_output"
+./"$src_dir/add_chelou.sh" > "$script_dir/user_output"
 
 diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
@@ -33,4 +28,4 @@ else
 	echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 fi
 
-rm -rf "$script_dir/user_output" "$script_dir/count_files.sh" "$script_dir/test0" "$script_dir/test1" "$script_dir/testd"
+rm -f "$script_dir/user_output"

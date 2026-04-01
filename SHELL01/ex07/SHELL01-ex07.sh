@@ -8,18 +8,13 @@ MAGENTA="\033[35;1m"
 RESET="\033[0m"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
-src_dir="ex03"
+src_dir="ex07"
 
-touch "$script_dir/test0"
-touch "$script_dir/test1"
-mkdir "$script_dir/testd"
-touch "$script_dir/testd/test2"
-touch "$script_dir/testd/test3"
-
-chmod 777 "$src_dir/count_files.sh"
-cp "$src_dir/count_files.sh" "$script_dir/count_files.sh"
-cd "$script_dir/"
-./count_files.sh > "$script_dir/user_output"
+export FT_LINE1=7
+export FT_LINE2=15
+chmod 777 "$src_dir/r_dwssap.sh"
+cat /etc/passwd | sed '/^#/d' | sed -n 'n;p' | cut -d ':' -f 1 | rev | sort -r | sed -n "$FT_LINE1,$FT_LINE2 p" | tr '\n' ' ' | sed 's/ /, /g' | sed 's/, $/./' | tr -d '\n' > "$script_dir/expected_output"
+./"$src_dir/r_dwssap.sh" > "$script_dir/user_output"
 
 diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
@@ -33,4 +28,4 @@ else
 	echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 fi
 
-rm -rf "$script_dir/user_output" "$script_dir/count_files.sh" "$script_dir/test0" "$script_dir/test1" "$script_dir/testd"
+rm -f "$script_dir/user_output"
