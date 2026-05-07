@@ -22,8 +22,14 @@ bash ~/MoulinetteLauncher/main.sh
 ### bash
 ```
 echo "alias ml='bash ~/MoulinetteLauncher/main.sh'" >> ~/.bashrc
+source ~/.bashrc
 ```
 ### zsh
 ```
 echo "alias ml='bash ~/MoulinetteLauncher/main.sh'" >> ~/.zshrc
+source ~/.zshrc
+```
+Then launch :
+```
+ml
 ```
