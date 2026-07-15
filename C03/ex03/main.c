@@ -11,7 +11,7 @@ int	main()
 	char	*return_value = ft_strncat(str1, str2, 0);
 	printf("dest = \"%s\", returned value = %s\n", str1, return_value == str1 ? "OK" : "KO");
 
-	char	s1[] = "Hello";
+	char	s1[15] = "Hello";
 	char	s2[] = "World";
 
 	printf("dest = \"%s\", src = \"%s\", n = 3  -->  ", s1, s2);

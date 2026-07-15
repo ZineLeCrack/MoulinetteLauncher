@@ -25,7 +25,7 @@ int	main()
 	return_value = ft_strlcat(s3, s4, 5);
 	printf("dest = \"%s\"  src = \"%s\", returned value = %s\n", s3, s4, return_value == 10 ? "OK" : "KO");
 
-	char	s5[] = "Hello";
+	char	s5[10] = "Hello";
 	char	s6[] = "World";
 
 	printf("dest = \"%s\", src = \"%s\", n = 7  -->  ", s5, s6);
