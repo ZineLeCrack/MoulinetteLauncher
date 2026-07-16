@@ -31,7 +31,7 @@ int	main()
 	putstr(return_value == 0 ? "OK\n" : "KO\n");
 
 	char	src3[] = "42";
-	char	dest3[] = "";
+	char	dest3[3] = "";
 
 	putstr("src = \"");
 	putstr(src3);
