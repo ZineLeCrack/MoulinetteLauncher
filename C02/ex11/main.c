@@ -4,18 +4,10 @@ void	ft_putstr_non_printable(char *str);
 
 int	main()
 {
-	ft_putstr_non_printable("Hello\nHow are you?");
-	write(1, "\n", 1);
-	ft_putstr_non_printable("");
-	write(1, "\n", 1);
-	ft_putstr_non_printable("\t\n\v\f\r");
-	write(1, "\n", 1);
+	char	str[256] = {0};
 
-	char str[128];
-	for (int i = 0; i < 127; i++) {
+	for (unsigned int i = 0; i < 255; i++)
 		str[i] = (char)(i + 1);
-	}
-	str[127] = '\0';
+
 	ft_putstr_non_printable(str);
-	write(1, "\n", 1);
 }
