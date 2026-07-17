@@ -39,6 +39,7 @@ int main()
 	char	*strs5[] = { "KO" };
 	char	sep5[] = ".";
 
+	putstr("Size = 0\n");
 	join = ft_strjoin(0, strs5, sep5);
 
 	putstr(join);
