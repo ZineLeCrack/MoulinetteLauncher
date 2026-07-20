@@ -13,13 +13,14 @@ src_dir="ex01"
 executable="$PWD/""$src_dir/""ft_cat"
 
 cd "$src_dir"
-make > "$script_dir/user_output";
+make > "$script_dir/user_output"
 
 if [[ $? -ne 0 ]]; then
 
 	echo
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
+	rm -f "$script_dir/user_output"
 
 else
 
