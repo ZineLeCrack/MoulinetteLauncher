@@ -1425,7 +1425,7 @@ stdin  : 00000000  54 68 65 20 73 74 61 6e  64 61 72 64 20 4c 6f 72  |The standa
 00002260  69 6e 73 20 74 6f 20 61  76 6f 69 64 20 77 6f 72  |ins to avoid wor|
 00002270  73 65 20 70 61 69 6e 73  2e 22                    |se pains."|
 0000227a
-stderr : hexdump: /home/romain/MoulinetteLauncher/C10/ex03/error.txt: No such file or directory
+stderr : hexdump: error.txt: No such file or directory
 Exit status: 0
 
 stdin  : 00000000  54 68 65 20 73 74 61 6e  64 61 72 64 20 4c 6f 72  |The standard Lor|
@@ -1705,7 +1705,7 @@ stdin  : 00000000  54 68 65 20 73 74 61 6e  64 61 72 64 20 4c 6f 72  |The standa
 00001120  20 70 61 69 6e 73 20 74  6f 20 61 76 6f 69 64 20  | pains to avoid |
 00001130  77 6f 72 73 65 20 70 61  69 6e 73 2e 22           |worse pains."|
 0000113d
-stderr : hexdump: /home/romain/MoulinetteLauncher/C10/ex03/no_perm.txt: Permission denied
+stderr : hexdump: no_perm.txt: Permission denied
 Exit status: 0
 
 stdin  : 0000000 6854 2065 7473 6e61 6164 6472 4c20 726f
@@ -1985,8 +1985,8 @@ stdin  : 0000000 6854 2065 7473 6e61 6164 6472 4c20 726f
 0001120 7020 6961 736e 7420 206f 7661 696f 2064
 0001130 6f77 7372 2065 6170 6e69 2e73 0022     
 000113d
-stderr : hexdump: /home/romain/MoulinetteLauncher/C10/ex03/no_perm.txt: Permission denied
-hexdump: /home/romain/MoulinetteLauncher/C10/ex03/error.txt: No such file or directory
+stderr : hexdump: no_perm.txt: Permission denied
+hexdump: error.txt: No such file or directory
 Exit status: 0
 
 stdin  : 00000000  54 68 65 20 73 74 61 6e  64 61 72 64 20 4c 6f 72  |The standard Lor|
