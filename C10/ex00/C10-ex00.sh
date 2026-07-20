@@ -122,6 +122,6 @@ else
 
 	fi fi fi
 
-	make fclean > "$script_dir/user_output"
+	make fclean
 	rm -f "$script_dir/user_output" "$script_dir/user_stdin_output" "$script_dir/user_stderr_output"
 fi

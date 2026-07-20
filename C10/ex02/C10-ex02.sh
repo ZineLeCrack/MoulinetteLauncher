@@ -159,5 +159,5 @@ else
 
 	rm -f "user_output" "user_stdin_output" "user_stderr_output"
 	cd "$OLDPWD"
-	make fclean > "user_output"
+	make fclean
 fi
