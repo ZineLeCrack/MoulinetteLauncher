@@ -12,7 +12,7 @@ script_dir="$(dirname "${BASH_SOURCE[0]}")"
 executable="$script_dir/output"
 src_dir="ex08"
 
-/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_list_reverse.c" "$script_dir/main.c" -o "$executable"
+/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_list_reverse.c" "$script_dir/main.c" -o "$executable" -I"$script_dir"
 
 if [[ $? -ne 0 ]]; then
 	echo
