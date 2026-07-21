@@ -26,16 +26,9 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[n] - s2[n]);
 }
 
-int	ft_strcmp_starting_with_second_char(char *s1, char *s2)
+int	ft_strcmp_by_size(char *s1, char *s2)
 {
-	int	n;
-
-	if (!s1[0] || !s2[0])
-		return (s1[0] - s2[0]);
-	n = 1;
-	while (s1[n] == s2[n] && s1[n] != '\0' && s2[n] != '\0')
-		n++;
-	return (s1[n] - s2[n]);
+	return (((int)strlen(s1)) - ((int)strlen(s2)));
 }
 
 int	main(void)
@@ -61,17 +54,17 @@ int	main(void)
 	putstr("After:\ttab = ");
 	print_tab(strs3);
 
-	char	*strs4[] = { "42", " ", "Le", " ", "Havre", " ", "!", "", NULL };
+	char	*strs4[] = { "g", "", "pppp", "dd", "bbbbbbb", "www", "zzzzzz", "aaaaa", NULL };
 	putstr("Before:\ttab = ");
 	print_tab(strs4);
-	ft_advanced_sort_string_tab(strs4, ft_strcmp_starting_with_second_char);
+	ft_advanced_sort_string_tab(strs4, ft_strcmp_by_size);
 	putstr("After:\ttab = ");
 	print_tab(strs4);
 
-	char	*strs5[] = { "Hello", NULL };
+	char	*strs5[] = { "Hello", "World", NULL };
 	putstr("Before:\ttab = ");
 	print_tab(strs5);
-	ft_advanced_sort_string_tab(strs5, ft_strcmp_starting_with_second_char);
+	ft_advanced_sort_string_tab(strs5, ft_strcmp_by_size);
 	putstr("After:\ttab = ");
 	print_tab(strs5);
 }
