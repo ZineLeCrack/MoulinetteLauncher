@@ -96,5 +96,5 @@ else
 	fi fi fi
 
 	make fclean
-	# rm -f "$script_dir/user_output"
+	rm -f "$script_dir/user_output"
 fi
