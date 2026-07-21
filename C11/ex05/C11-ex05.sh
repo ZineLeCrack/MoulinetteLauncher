@@ -20,29 +20,30 @@ if [[ $? -ne 0 ]]; then
 	echo
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
+	rm -f "$script_dir/user_output"
 
 else
 
 	echo ">>>>>>>>>> 42 + 21 <<<<<<<<<<" > "$script_dir/user_output"
-	"$executable" 42 "+" 21 >> "$script_dir/user_output"
+	"$executable" 42 "+" 21 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>> 42 + 21 - 64 <<<<<<<<" >> "$script_dir/user_output"
-	"$executable" 42 "+" 21 "-" 64 >> "$script_dir/user_output"
+	"$executable" 42 "+" 21 "-" 64 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>>>>> -7 * +6 <<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" -7 "*" +6 >> "$script_dir/user_output"
+	"$executable" -7 "*" +6 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>>>>> 35 / 8 <<<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" 35 "/" 8 >> "$script_dir/user_output"
+	"$executable" 35 "/" 8 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>> 21 % +--+5 <<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" 21 "%" +--+5 >> "$script_dir/user_output"
+	"$executable" 21 "%" +--+5 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>>> --21 - 63 <<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" --21 "-" 63 >> "$script_dir/user_output"
+	"$executable" --21 "-" 63 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>> +++42 / 0 <<<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" +++42 "/" 0 >> "$script_dir/user_output"
+	"$executable" +++42 "/" 0 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>>>> 42 % 0 <<<<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" 42 "%" 0 >> "$script_dir/user_output"
+	"$executable" 42 "%" 0 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>>>> 42 = 0 <<<<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" 42 "=" 0 >> "$script_dir/user_output"
+	"$executable" 42 "=" 0 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 	echo ">>>>>>>>>> 42 ** 2 <<<<<<<<<<" >> "$script_dir/user_output"
-	"$executable" 42 "**" 2 >> "$script_dir/user_output"
+	"$executable" 42 "**" 2 >> "$script_dir/user_output" 2>> "$script_dir/user_output"
 
 	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
 
@@ -94,6 +95,6 @@ else
 
 	fi fi fi
 
-	make fclean > "$script_dir/user_output"
-	rm -f "$script_dir/user_output"
+	make fclean
+	# rm -f "$script_dir/user_output"
 fi
