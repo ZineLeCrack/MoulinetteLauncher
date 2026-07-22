@@ -40,6 +40,9 @@ void	ft_list_clear(t_list *begin_with, void (*free_fct)(void *))
 
 int	main(void)
 {
+	putstr(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+
+	t_list	*start = NULL;
 	t_list	*begin1 = NULL;
 	t_list	*tmp = NULL;
 	char	*strs1[] = { strdup("42"), strdup("Le"), strdup("Havre"), NULL };
@@ -56,8 +59,17 @@ int	main(void)
 
 	putstr(">>>>>>>>>>>>>>>>>>>>>>> [\"42\", \"Le\", \"Havre\"] <<<<<<<<<<<<<<<<<<<<<<<\n");
 	putstr("list: \"");
-	for (t_list *tmp = begin1; tmp; tmp = tmp->next) {
-		if (tmp != begin1)
+	for (t_list *tmp = start; tmp; tmp = tmp->next) {
+		if (tmp != start)
+			putstr("\" --> \"");
+		putstr(tmp->data);
+	}
+	putstr("\"\n");
+	putstr("merging...\n");
+	ft_list_merge(&start, begin1);
+	putstr("list: \"");
+	for (t_list *tmp = start; tmp; tmp = tmp->next) {
+		if (tmp != start)
 			putstr("\" --> \"");
 		putstr(tmp->data);
 	}
@@ -87,10 +99,10 @@ int	main(void)
 	}
 	putstr("\"\n");
 	putstr("merging...\n");
-	ft_list_merge(&begin1, begin2);
+	ft_list_merge(&start, begin2);
 	putstr("list: \"");
-	for (t_list *tmp = begin1; tmp; tmp = tmp->next) {
-		if (tmp != begin1)
+	for (t_list *tmp = start; tmp; tmp = tmp->next) {
+		if (tmp != start)
 			putstr("\" --> \"");
 		putstr(tmp->data);
 	}
@@ -104,14 +116,14 @@ int	main(void)
 	putstr((char *)begin3);
 	putstr("\n");
 	putstr("merging...\n");
-	ft_list_merge(&begin1, begin3);
+	ft_list_merge(&start, begin3);
 	putstr("list: \"");
-	for (t_list *tmp = begin1; tmp; tmp = tmp->next) {
-		if (tmp != begin1)
+	for (t_list *tmp = start; tmp; tmp = tmp->next) {
+		if (tmp != start)
 			putstr("\" --> \"");
 		putstr(tmp->data);
 	}
 	putstr("\"\n");
 
-	ft_list_clear(begin1, free);
+	ft_list_clear(start, free);
 }
