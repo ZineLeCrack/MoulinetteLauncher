@@ -52,7 +52,7 @@ int	main(void)
 {
 	t_list	*begin = NULL;
 	t_list	*tmp = NULL;
-	char	*strs1[] = { strdup("42"), strdup("Le"), strdup("Havre"), NULL };
+	char	*strs1[] = { strdup("42"), strdup("Le"), strdup("havre"), NULL };
 
 	for(int i = 0; strs1[i]; i++) {
 		if (!tmp) {
@@ -64,7 +64,7 @@ int	main(void)
 		}
 	}
 
-	putstr(">>>>>>>>>>>>>>>>>>>>>>> [\"42\", \"Le\", \"Havre\"] <<<<<<<<<<<<<<<<<<<<<<<\n");
+	putstr(">>>>>>>>>>>>>>>>>>>>>>> [\"42\", \"Le\", \"havre\"] <<<<<<<<<<<<<<<<<<<<<<<\n");
 	putstr("list: \"");
 	for (t_list *tmp = begin; tmp; tmp = tmp->next) {
 		if (tmp != begin)
@@ -72,7 +72,7 @@ int	main(void)
 		putstr(tmp->data);
 	}
 	putstr("\"\n");
-	putstr("adding \"Normandy\"...\n");
+	putstr("adding [\"Normandy\"]...\n");
 	t_list	*new = malloc(sizeof(t_list));
 	new->next = NULL;
 	new->data = strdup("Normandy");
@@ -89,7 +89,7 @@ int	main(void)
 
 	begin = NULL;
 	tmp = NULL;
-	char	*strs2[] = { strdup("24"), strdup("42"), strdup("12"), strdup("84"), strdup("21"), strdup("42"), strdup("99"), strdup("10"), strdup("42"), strdup("40"), strdup("56"), strdup("42"), NULL };
+	char	*strs2[] = { strdup("10"), strdup("12"), strdup("21"), strdup("24"), strdup("40"), strdup("42"), strdup("42"), strdup("42"), strdup("42"), strdup("56"), strdup("84"), strdup("99"), NULL };
 
 	for(int i = 0; strs2[i]; i++) {
 		if (!tmp) {
@@ -101,8 +101,8 @@ int	main(void)
 		}
 	}
 
-	putstr(">>>>>>>>>>>>>>>>> [\"24\", \"42\", \"12\", \"84\", \"21\", \"42\", <<<<<<<<<<<<<<\n");
-	putstr(">>>>>>>>>>>>>>>>> \"99\", \"10\", \"42\", \"40\", \"56\", \"42\"] <<<<<<<<<<<<<<<\n");
+	putstr(">>>>>>>>>>>>>>>>> [\"10\", \"12\", \"21\", \"24\", \"40\", \"42\", <<<<<<<<<<<<<<\n");
+	putstr(">>>>>>>>>>>>>>>>> \"42\", \"42\", \"42\", \"56\", \"84\", \"99\"] <<<<<<<<<<<<<<<\n");
 	putstr("list: \"");
 	for (t_list *tmp = begin; tmp; tmp = tmp->next) {
 		if (tmp != begin)
@@ -110,15 +110,12 @@ int	main(void)
 		putstr(tmp->data);
 	}
 	putstr("\"\n");
-	putstr("adding \"2\"...\n");
 	new = malloc(sizeof(t_list));
-	new->next = NULL;
 	new->data = strdup("2");
-	ft_sorted_list_merge(&begin, new, ft_strcmp);
-	putstr("adding \"72\"...\n");
-	new = malloc(sizeof(t_list));
-	new->next = NULL;
-	new->data = strdup("72");
+	new->next = malloc(sizeof(t_list));;
+	new->next->data = strdup("72");
+	new->next->next = NULL;
+	putstr("adding [\"2\", \"72\"]...\n");
 	ft_sorted_list_merge(&begin, new, ft_strcmp);
 	putstr("list: \"");
 	for (t_list *tmp = begin; tmp; tmp = tmp->next) {
@@ -138,7 +135,7 @@ int	main(void)
 	putstr((char *)begin);
 	putstr("\n");
 	putstr("function: ft_strcmp\n");
-	putstr("adding \"42\"...\n");
+	putstr("adding [\"42\"]...\n");
 	new = malloc(sizeof(t_list));
 	new->next = NULL;
 	new->data = strdup("42");
