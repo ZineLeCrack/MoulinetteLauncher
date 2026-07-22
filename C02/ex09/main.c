@@ -4,7 +4,7 @@ char	*ft_strcapitalize(char *str);
 
 int	main()
 {
-	char	str1[] = "hello world !";
+	char	str1[] = "hElLo WoRlD !";
 
 	putstr("\"");
 	putstr(str1);
