@@ -18,6 +18,7 @@ if [[ $? -ne 0 ]]; then
 	echo
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
+	grade=0
 else
 	"$executable" > "$script_dir/user_output"
 
@@ -27,6 +28,7 @@ else
 		echo
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
+		grade=0
 	else
 		norminette -R CheckForbiddenSourceHeader "$src_dir" > "$script_dir/user_output"
 
@@ -36,11 +38,15 @@ else
 			echo -e "$RESET"
 			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 			echo -e "${RED}Norm check KO :(${RESET}"
+			grade=0
 		else
 			echo
 			echo -e "${GREEN}Diff OK :)${RESET}"
 			echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+			grade=10
 	fi fi
 
 	rm -f "$executable" "$script_dir/user_output"
 fi
+
+exit $grade
