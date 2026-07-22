@@ -10,6 +10,9 @@ RESET="\033[0m"
 echo
 echo -e "$BLUE=========================     C01    ============================$RESET"
 
+final_grade=0
+end_grade=0
+
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
 src_dir="ex00"
