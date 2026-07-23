@@ -19,6 +19,7 @@ if [[ $? -ne 0 ]]; then
 	echo
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
+	grade=0
 else
 
 	norminette -R CheckDefine "$script_dir/ft.h" > "$script_dir/user_output"
@@ -30,13 +31,17 @@ else
 		echo -e "$RESET"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Norm check KO :(${RESET}"
+		grade=0
 
 	else
 
 		echo
 		echo -e "${GREEN}Diff OK :)${RESET}"
 		echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=1
 
 fi fi
 
 rm -f "$executable" "$script_dir/ft.h"
+
+exit $grade
