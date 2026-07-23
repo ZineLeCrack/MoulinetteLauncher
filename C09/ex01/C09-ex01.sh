@@ -22,6 +22,7 @@ if [[ $? -ne 0 ]]; then
 	echo
 	echo -e "${RED}KO :(${RESET}"
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	grade=0
 
 else
 
@@ -34,6 +35,7 @@ else
 		echo
 		echo -e "${RED}Diff KO :(${RESET}"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=0
 
 		rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile" "$script_dir/libft.a" "$script_dir/srcs/*.o"
 		exit 0
@@ -49,6 +51,7 @@ else
 		echo
 		echo -e "${RED}Rule clean KO :(${RESET}"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=0
 
 		rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile" "$script_dir/libft.a" "$script_dir/srcs/*.o"
 		exit 0
@@ -62,6 +65,7 @@ else
 		echo
 		echo -e "${RED}Rule clean KO :(${RESET}"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=0
 
 		rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile" "$script_dir/libft.a"
 		exit 0
@@ -78,6 +82,7 @@ else
 		echo
 		echo -e "${RED}Rule fclean KO :(${RESET}"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=0
 
 		rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile" "$script_dir/libft.a" "$script_dir/srcs/*.o"
 		exit 0
@@ -91,6 +96,7 @@ else
 		echo
 		echo -e "${RED}Rule fclean KO :(${RESET}"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=0
 
 		rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile" "$script_dir/libft.a"
 		exit 0
@@ -108,6 +114,7 @@ else
 		echo
 		echo -e "${RED}Rule re KO :(${RESET}"
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+		grade=0
 
 		make fclean > "$script_dir/user_output"
 		rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile"
@@ -118,7 +125,10 @@ else
 	echo
 	echo -e "${GREEN}Diff OK :)${RESET}"
 	echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+	grade=30
 
 	make fclean > "$script_dir/user_output"
 	rm -f "$executable" "$script_dir/user_output" "$script_dir/fclean_all_rules_output" "$script_dir/Makefile"
 fi
+
+exit $grade
