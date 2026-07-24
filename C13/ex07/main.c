@@ -17,9 +17,9 @@ void	apply_by_level(void *item, int current_level, int is_first_elem)
 	putstr("Level: ");
 	write(1, &lvl, 1);
 	putstr(", ");
-	if (is_first_elem)
-		putstr("first: ");
 	putstr(item);
+	if (is_first_elem)
+		putstr(" <first>");
 	putstr("\n");
 }
 
@@ -41,17 +41,19 @@ t_btree	*btree_create_node(void *item)
 int	main(void)
 {
 	t_btree	*root = btree_create_node("42");
-	root->left = btree_create_node("40");
-	root->right = btree_create_node("44");
-	root->left->left = btree_create_node("39");
-	root->left->right = btree_create_node("41");
-	root->right->left = btree_create_node("43");
-	root->right->right = btree_create_node("45");
+	root->left = btree_create_node("44");
+	root->right = btree_create_node("40");
+	root->left->left = btree_create_node("45");
+	root->left->right = btree_create_node("43");
+	root->right->left = btree_create_node("41");
+	root->right->right = btree_create_node("39");
+	root->right->right->left = btree_create_node("46");
 
-	putstr("     42\n    /  \\\n  44    40\n  /\\    /\\\n45 43  41 39\n\n");
+	putstr("     42\n    /  \\\n  44    40\n  /\\    /\\\n45 43  41 39\n          /\n         46\n\n");
 
 	btree_apply_by_level(root, apply_by_level);
 
+	free(root->right->right->left);
 	free(root->left->left);
 	free(root->left->right);
 	free(root->left);
