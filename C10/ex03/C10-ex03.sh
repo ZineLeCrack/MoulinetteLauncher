@@ -21,6 +21,7 @@ if [[ $? -ne 0 ]]; then
 	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
 	echo -e "${RED}KO :(${RESET}"
 	rm -f "$script_dir/user_output"
+	grade=0
 
 else
 
@@ -108,6 +109,7 @@ else
 		echo
 		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 		echo -e "${RED}Diff KO :(${RESET}"
+		grade=0
 
 		valgrind "$executable" -c 42 "test.txt" 2>&1 | grep -q "All heap blocks were freed -- no leaks are possible" && \
 		valgrind "$executable" -c 42 "test.txt" 2>&1 | grep -q "ERROR SUMMARY: 0 errors from 0 contexts" && \
@@ -120,6 +122,7 @@ else
 			echo -e "$RESET"
 			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 			echo -e "${RED}Memory check KO :(${RESET}"
+			grade=0
 
 		fi
 
@@ -136,6 +139,7 @@ else
 			echo -e "$RESET"
 			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 			echo -e "${RED}Memory check KO :(${RESET}"
+			grade=0
 
 		else 
 
@@ -148,12 +152,14 @@ else
 				echo -e "$RESET"
 				echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
 				echo -e "${RED}Norm check KO :(${RESET}"
+				grade=0
 
 			else
 
 				echo
 				echo -e "${GREEN}Diff OK :)${RESET}"
 				echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+				grade=35
 
 	fi fi fi
 
@@ -161,3 +167,5 @@ else
 	cd "$OLDPWD"
 	make fclean
 fi
+
+exit $grade
