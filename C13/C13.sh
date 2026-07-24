@@ -81,7 +81,7 @@ if [[ -d "$src_dir" ]]; then
 	echo
 
 	echo -e "$MAGENTA=========================     ex03     ==========================$RESET"
-	echo -e "$MAGENTA========================= ft_list_last ==========================$RESET"
+	echo -e "$MAGENTA====================== btree_apply_suffix =======================$RESET"
 
 	bash "$script_dir/ex03/C13-ex03.sh"
 
