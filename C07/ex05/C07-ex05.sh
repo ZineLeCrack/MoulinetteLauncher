@@ -77,6 +77,18 @@ else
 				echo
 				echo -e "${GREEN}Diff OK :)${RESET}"
 				echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
+
+				/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_split.c" "$script_dir/failmalloc.c" -o "$executable"
+				{ LD_PRELOAD=~/MoulinetteLauncher/failmalloc.so "$executable" > /dev/null 2>&1; } 2> /dev/null
+				if [[ $? -ne 0 ]]; then
+					echo -e $YELLOW"⚠️"" Warning : Unchecked malloc return value ""⚠️"$RESET
+				else
+					/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_split.c" "$script_dir/failmalloc.c" -o "$executable"
+					{ LD_PRELOAD=~/MoulinetteLauncher/fail3rdmalloc.so "$executable" > /dev/null 2>&1; } 2> /dev/null
+					if [[ $? -ne 0 ]]; then
+						echo -e $YELLOW"⚠️"" Warning : Unchecked malloc return value ""⚠️"$RESET
+					fi
+				fi
 				grade=20
 
 	fi fi fi
