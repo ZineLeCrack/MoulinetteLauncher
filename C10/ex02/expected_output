@@ -11,19 +11,19 @@ stdin  : r pleasures, or else he endures pains to avoid worse pains."stderr : Ex
 stdin  : ==> test.txt <==
 ins."
 ==> test.txt <==
-ins."stderr : tail: cannot open 'error.txt' for reading: No such file or directory
+ins."stderr : ft_tail: cannot open 'error.txt' for reading: No such file or directory
 Exit status: 0
 
 stdin  : ==> test.txt <==
-se he endures pains to avoid worse pains."stderr : tail: cannot open 'no_perm.txt' for reading: Permission denied
+se he endures pains to avoid worse pains."stderr : ft_tail: cannot open 'no_perm.txt' for reading: Permission denied
 Exit status: 0
 
 stdin  : stderr : Exit status: 0
 
-stdin  : stderr : tail: invalid number of bytes: ‘4654374834737843454347373’: Value too large for defined data type
+stdin  : stderr : ft_tail: invalid number of bytes: ‘4654374834737843454347373’: Value too large for defined data type
 Exit status: 0
 
-stdin  : stderr : tail: invalid number of bytes: ‘34272d34234324’
+stdin  : stderr : ft_tail: invalid number of bytes: ‘34272d34234324’
 Exit status: 0
 
 stdin  : ==> test.txt <==
