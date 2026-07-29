@@ -32,4 +32,7 @@ int	main()
 
 	found = ft_strstr(s1, s1);
 	printf("str = \"%s\", to_find = \"%s\" --> return_value = \"%s\"\n", s1, s1, found);
+
+	found = ft_strstr(s5, s5);
+	printf("str = \"%s\", to_find = \"%s\" --> return_value = \"%s\"\n", s5, s5, found);
 }
