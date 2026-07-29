@@ -1,5 +1,10 @@
-#include "../../includes.h"
+#include "../../../MoulinetteLauncher/includes.h"
 #include "ft.h"
+#include "ft.h"
+
+#ifndef FT_H
+# error Invalid `#define`
+#endif
 
 int main()
 {

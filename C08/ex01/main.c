@@ -1,4 +1,9 @@
 #include "ft_boolean.h"
+#include "ft_boolean.h"
+
+#ifndef FT_BOOLEAN_H
+# error Invalid `#define`
+#endif
 
 void ft_putstr(char *str)
 {

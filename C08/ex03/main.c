@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rlebaill <rlebaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 08:47:04 by romain            #+#    #+#             */
-/*   Updated: 2025/09/17 09:17:15 by romain           ###   ########.fr       */
+/*   Updated: 2026/07/29 11:18:05 by rlebaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes.h"
 #include "ft_point.h"
+#include "ft_point.h"
+
+#ifndef FT_POINT_H
+# error Invalid `#define`
+#endif
 
 void	set_point(t_point *point, int x, int y)
 {
