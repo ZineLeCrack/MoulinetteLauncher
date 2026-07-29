@@ -53,4 +53,14 @@ int	main()
 	putstr(str5);
 	putstr("\", returned value = ");
 	putstr(return_value == str5 ? "OK\n" : "KO\n");
+
+	char	str6[] = "d237b3254223 d53r25dr32d23568r11e1378rf0438f43 8r428r2908r2490 9d4f3f3f3f4 1c2m820cn4721c4n71 0rdu328yr23r32 9090e217e218dh zfmz A01 f23r 32yr7832 r3287dt320  tt 6969 7r5 4R rOTI OFU";
+
+	putstr("\"");
+	putstr(str6);
+	putstr("\" --> \"");
+	return_value = ft_strcapitalize(str6);
+	putstr(str6);
+	putstr("\", returned value = ");
+	putstr(return_value == str6 ? "OK\n" : "KO\n");
 }
