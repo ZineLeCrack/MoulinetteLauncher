@@ -128,7 +128,7 @@ else
 
 	fi fi fi
 
-	make fclean
+	make fclean > /dev/null 2> /dev/null
 	rm -f "$script_dir/user_output" "$script_dir/user_stdin_output" "$script_dir/user_stderr_output"
 fi
 

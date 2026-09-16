@@ -165,7 +165,7 @@ else
 
 	rm -f "user_output" "user_stdin_output" "user_stderr_output"
 	cd "$OLDPWD"
-	make fclean
+	make fclean > /dev/null 2> /dev/null
 fi
 
 exit $grade
