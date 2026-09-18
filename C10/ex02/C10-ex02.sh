@@ -101,7 +101,7 @@ else
 	echo >> "expected_output"
 	echo >> "user_output"
 
-	test "$executable" -c 4654374834737843454347373 "test.txt" "test.txt" "test.txt" "test.txt" "test.txt"
+	test -c 4654374834737843454347373 "test.txt" "test.txt" "test.txt" "test.txt" "test.txt"
 
 	echo >> "expected_output"
 	echo >> "user_output"
