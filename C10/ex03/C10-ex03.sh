@@ -100,6 +100,12 @@ else
 
 	echo >> "user_output"
 
+	echo -n "stdin  : " > "user_stdin_output"
+	echo -n "stderr : " > "user_stderr_output"
+	"$executable" -C -C -C "test.txt" "test.txt" "test.txt" "test.txt" "test.txt" >> "user_stdin_output" 2>> "user_stderr_output"
+	cat "user_stdin_output" "user_stderr_output" >> "user_output"
+	echo "Exit status:" $? >> "user_output"
+
 	chmod 644 "no_perm.txt"
 
 	diff -au --color=always "user_output" "expected_output"
