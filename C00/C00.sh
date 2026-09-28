@@ -13,7 +13,11 @@ echo -e "$BLUE=========================     C00    ============================$
 final_grade=0
 end_grade=0
 
-script_dir="$(dirname "${BASH_SOURCE[0]}")"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ -n "$1" ]]; then
+	cd "$1"
+fi
 
 src_dir="ex00"
 
@@ -23,6 +27,7 @@ if [[ -d "$src_dir" ]]; then
 	echo -e "$MAGENTA==========================    ex00    ===========================$RESET"
 	echo -e "$MAGENTA========================== ft_putchar ===========================$RESET"
 
+	pwd
 	bash "$script_dir/ex00/C00-ex00.sh"
 
 	grade=$?

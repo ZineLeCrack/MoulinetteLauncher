@@ -13,7 +13,11 @@ end_grade=0
 echo
 echo -e "$BLUE=========================     C03    ============================$RESET"
 
-script_dir="$(dirname "${BASH_SOURCE[0]}")"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ -n "$1" ]]; then
+	cd "$1"
+fi
 
 src_dir="ex00"
 
