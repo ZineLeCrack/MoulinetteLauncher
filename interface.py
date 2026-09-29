@@ -39,6 +39,8 @@ def browse():
 def test(output: tk.Text, key: str):
 	output.delete("1.0", tk.END)
 
+	if key not in options.keys(): return
+
 	threading.Thread(
 		target=run_test,
 		args=(output, key),
