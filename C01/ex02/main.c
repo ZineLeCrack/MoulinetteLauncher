@@ -2,14 +2,15 @@
 
 void	ft_swap(int *a,int *b);
 
-int main()
+int main(int ac, char **av)
 {
-	int a = 24;
-	int b = 42;
+	if (ac == 3) {
+		int	a = atoi(av[1]);
+		int	b = atoi(av[2]);
 
-	printf("a = %d, b = %d => ", a, b);
-	
-	ft_swap(&a, &b);
+		ft_swap(&a, &b);
 
-	printf("a = %d, b = %d\n", a, b);
+		printf("%d\n", a);
+		printf("%d\n", b);
+	}
 }

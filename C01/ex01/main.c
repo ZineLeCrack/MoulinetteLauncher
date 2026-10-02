@@ -17,5 +17,5 @@ int main()
 	int *********nb9 = &nb8;
 
 	ft_ultimate_ft(nb9);
-	printf("%d\n", n);
+	printf("%d", n);
 }
