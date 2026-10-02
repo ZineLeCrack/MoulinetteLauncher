@@ -2,12 +2,9 @@
 
 void	ft_print_combn(int nb);
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	for (int i = 1; i < 10; i++)
-	{
-		printf("nb = %d:\n", i);
-		ft_print_combn(i);
-		printf("\n\n");
+	if (ac == 2) {
+		ft_print_combn(atoi(av[1]));
 	}
 }
