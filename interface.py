@@ -1,5 +1,7 @@
 #!/bin/python3
 
+import sys
+import os
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import ttk
@@ -7,29 +9,30 @@ import subprocess
 import threading
 import re
 
+dirname = os.path.dirname(sys.argv[0])
+
 ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 
-folder = "/home/rlebaill/Piscine/C00"
+folder = dirname
 
 options = {
-	"C Piscine Shell 00": "./SHELL00/SHELL00.sh",
-	"C Piscine Shell 01": "./SHELL01/SHELL01.sh",
-	"C Piscine C 00": "./C00/C00.sh",
-	"C Piscine C 01": "./C01/C01.sh",
-	"C Piscine C 02": "./C02/C02.sh",
-	"C Piscine C 03": "./C03/C03.sh",
-	"C Piscine C 04": "./C04/C04.sh",
-	"C Piscine C 05": "./C05/C05.sh",
-	"C Piscine C 06": "./C06/C06.sh",
-	"C Piscine C 07": "./C07/C07.sh",
-	"C Piscine C 08": "./C08/C08.sh",
-	"C Piscine C 09": "./C09/C09.sh",
-	"C Piscine C 10": "./C10/C10.sh",
-	"C Piscine C 11": "./C11/C11.sh",
-	"C Piscine C 12": "./C12/C12.sh",
-	"C Piscine C 13": "./C13/C13.sh"
+	"C Piscine Shell 00": f"{dirname}/SHELL00/SHELL00.sh",
+	"C Piscine Shell 01": f"{dirname}/SHELL01/SHELL01.sh",
+	"C Piscine C 00": f"{dirname}/C00/C00.sh",
+	"C Piscine C 01": f"{dirname}/C01/C01.sh",
+	"C Piscine C 02": f"{dirname}/C02/C02.sh",
+	"C Piscine C 03": f"{dirname}/C03/C03.sh",
+	"C Piscine C 04": f"{dirname}/C04/C04.sh",
+	"C Piscine C 05": f"{dirname}/C05/C05.sh",
+	"C Piscine C 06": f"{dirname}/C06/C06.sh",
+	"C Piscine C 07": f"{dirname}/C07/C07.sh",
+	"C Piscine C 08": f"{dirname}/C08/C08.sh",
+	"C Piscine C 09": f"{dirname}/C09/C09.sh",
+	"C Piscine C 10": f"{dirname}/C10/C10.sh",
+	"C Piscine C 11": f"{dirname}/C11/C11.sh",
+	"C Piscine C 12": f"{dirname}/C12/C12.sh",
+	"C Piscine C 13": f"{dirname}/C13/C13.sh"
 }
-
 
 def browse():
 	global folder
@@ -51,13 +54,13 @@ def run_test(output: tk.Text, key: str):
 	process = subprocess.Popen(
 		[options[key], folder],
 		stdout=subprocess.PIPE,
-		stderr=subprocess.STDOUT,
-		text=True,
-		bufsize=1
+		stderr=subprocess.STDOUT
 	)
 
 	for line in process.stdout:
+		line = line.decode("utf-8", errors="replace")
 		line = ansi_escape.sub('', line)
+
 		output.after(0, output.insert, tk.END, line)
 		output.after(0, output.see, tk.END)
 
