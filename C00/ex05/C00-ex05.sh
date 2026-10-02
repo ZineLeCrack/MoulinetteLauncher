@@ -1,6 +1,6 @@
 #!/bin/bash
 
-src_dir="$(pwd)/ex05"
+src_dir="$(pwd)/$1"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 cd "$script_dir"
