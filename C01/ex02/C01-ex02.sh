@@ -8,6 +8,8 @@ cd "$script_dir"
 executable="./user_exe"
 user_output="user_output"
 
+src_file="ft_swap.c"
+
 function exit_prog() {
 	rm -f "$executable" "$user_output"
 	exit $1
@@ -16,7 +18,7 @@ function exit_prog() {
 function test() {
 	echo "= Test $1 ================================================================"
 	echo "\$> $2 ${@:3}"
-	"$2" "${@:3}" > "$user_output"
+	{ "$2" "${@:3}"; } &> "$user_output"
 	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
 	diff -U 3 "$user_output" "test$1.output" | cat -e
 
@@ -28,15 +30,15 @@ function test() {
 	fi
 }
 
-/usr/bin/norminette "$src_dir/ft_swap.c" | grep -E "(Error|Warning)" > /dev/null
+/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
 
 if [[ $? -eq 0 ]]; then
 	echo "Norme check FAILED"
 	exit_prog 0
 fi
 
-echo -e "cc -Wall -Wextra -Werror ft_swap.c main.c -o $executable\n"
-cc -Wall -Wextra -Werror -g3 "$src_dir/ft_swap.c" main.c -o "$executable"
+echo -e "cc -Wall -Wextra -Werror $src_file main.c -o $executable\n"
+cc -Wall -Wextra -Werror -g3 "$src_dir/$src_file" main.c -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo "Could not compile '$executable'"

@@ -16,7 +16,7 @@ function exit_prog() {
 function test() {
 	echo "= Test $1 ================================================================"
 	echo "\$> $2 ${@:3}"
-	"$2" "${@:3}" > "$user_output"
+	{ "$2" "${@:3}"; } &> "$user_output"
 	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
 	diff -U 3 "$user_output" "test$1.output" | cat -e
 

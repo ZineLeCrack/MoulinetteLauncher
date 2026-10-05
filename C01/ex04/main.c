@@ -2,12 +2,18 @@
 
 void	ft_ultimate_div_mod(int *a, int *b);
 
-int	main()
+int	main(int ac, char **av)
 {
-	int	div = 42;
-	int	mod = 5;
+	if (ac == 3) {
+		int	a = atoi(av[1]);
+		int	b = atoi(av[2]);
 
-	ft_ultimate_div_mod(&div, &mod);
+		printf("%d\n", a);
+		printf("%d\n", b);
 
-	printf("42 / 5 = %d\n42 %% 5 = %d\n", div, mod);
+		ft_ultimate_div_mod(&a, &b);
+
+		printf("%d\n", a);
+		printf("%d\n", b);
+	}
 }
