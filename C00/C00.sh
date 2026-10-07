@@ -18,11 +18,20 @@ function test_ex() {
 		bash "$script_dir/$1/C00-$1.sh" "$1"
 
 		grade=$?
-		echo -e "Grade: $grade\n"
+
+		if [[ $grade -eq 214 ]]; then 
+			echo -e "Grade: -42\n"
+		else
+			echo -e "Grade: $grade\n"
+		fi
 
 		if [[ $grade -eq 0 ]]; then
 			end_grade=1
-		fi
+		else if [[ $grade -eq 214 ]]; then
+			end_grade=1
+			final_grade=-42
+		fi fi
+
 		if [[ $end_grade -ne 1 ]]; then
 			final_grade=$((final_grade + grade))
 		fi

@@ -8,8 +8,11 @@ cd "$script_dir"
 executable="./user_exe"
 user_output="user_output"
 
+src_file="ft_print_combn.c"
+src_obj="ft_print_combn.o"
+
 function exit_prog() {
-	rm -f "$executable" "$user_output"
+	rm -f "$executable" "$user_output" "$src_obj"
 	exit $1
 }
 
@@ -28,15 +31,27 @@ function test() {
 	fi
 }
 
-/usr/bin/norminette "$src_dir/ft_print_combn.c" | grep -E "(Error|Warning)" > /dev/null
+cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj"
+
+if [[ $? -ne 0 ]]; then
+		echo "Could not compile '$executable'"
+		exit_prog 0
+fi
+
+if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
+		echo "CHEATING"
+		exit_prog -42
+fi
+
+/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
 
 if [[ $? -eq 0 ]]; then
 	echo "Norme check FAILED"
 	exit_prog 0
 fi
 
-echo -e "cc -Wall -Wextra -Werror ft_print_combn.c main.c -o $executable\n"
-cc -Wall -Wextra -Werror -g3 "$src_dir/ft_print_combn.c" main.c -o "$executable"
+echo -e "cc -Wall -Wextra -Werror $src_file main.c -o $executable\n"
+cc -Wall -Wextra -Werror -g3 "$src_dir/$src_file" main.c -o "$executable"
 
 if [[ $? -ne 0 ]]; then
 	echo "Could not compile '$executable'"
