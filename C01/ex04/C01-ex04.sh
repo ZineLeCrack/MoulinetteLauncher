@@ -9,9 +9,10 @@ executable="./user_exe"
 user_output="user_output"
 
 src_file="ft_ultimate_div_mod.c"
+src_obj="ft_ultimate_div_mod.o"
 
 function exit_prog() {
-	rm -f "$executable" "$user_output"
+	rm -f "$executable" "$user_output" "$src_obj"
 	exit $1
 }
 
@@ -29,6 +30,18 @@ function test() {
 		echo -e "\nDiff OK :D\n"
 	fi
 }
+
+cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj"
+
+if [[ $? -ne 0 ]]; then
+		echo "Could not compile '$executable'"
+		exit_prog 0
+fi
+
+if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
+		echo "CHEATING"
+		exit_prog -42
+fi
 
 /usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
 
