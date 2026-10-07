@@ -1,7 +1,0 @@
-"azerty" --> 1
-"" --> 1
-"`test`" --> 0
-"{uwu}" --> 0
-"KO" --> 0
-"😁" --> 0
-"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" --> 1

@@ -1,52 +1,67 @@
 #!/bin/bash
 
-RED="\033[31;1m"
-GREEN="\033[32;1m"
-YELLOW="\033[33;1m"
-BLUE="\033[34;1m"
-MAGENTA="\033[35;1m"
-RESET="\033[0m"
+src_dir="$(pwd)/$1"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
+cd "$script_dir"
 
-executable="$script_dir/output"
-src_dir="ex07"
+executable="./user_exe"
+user_output="user_output"
 
-/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_strupcase.c" "$script_dir/main.c" -o "$executable"
+src_file="ft_strupcase.c"
+src_obj="ft_strupcase.o"
+
+function exit_prog() {
+	rm -f "$executable" "$user_output" "$src_obj"
+	exit $1
+}
+
+function test() {
+	echo "= Test $1 ================================================================"
+	echo "\$> $2 ${@:3}"
+	{ "$2" "${@:3}"; } &> "$user_output"
+	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
+	diff -U 3 "$user_output" "test$1.output" | cat -e
+
+	if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
+		echo -e "\nDiff KO :("
+		exit_prog 0
+	else
+		echo -e "\nDiff OK :D\n"
+	fi
+}
+
+cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj"
 
 if [[ $? -ne 0 ]]; then
-	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-	echo -e "${RED}KO :(${RESET}"
-	grade=0
-else
-	"$executable" > "$script_dir/user_output"
-
-	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
-
-	if [[ $? -ne 0 ]]; then
-		echo
-		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-		echo -e "${RED}Diff KO :(${RESET}"
-		grade=0
-	else
-		norminette -R CheckForbiddenSourceHeader "$src_dir" > "$script_dir/user_output"
-
-		if [[ $? -ne 0 ]]; then
-			echo -e "$RED"
-			norminette -R CheckForbiddenSourceHeader "$src_dir" | grep "Error"
-			echo -e "$RESET"
-			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-			echo -e "${RED}Norm check KO :(${RESET}"
-			grade=0
-		else
-			echo
-			echo -e "${GREEN}Diff OK :)${RESET}"
-			echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-			grade=10
-	fi fi
-
-	rm -f "$executable" "$script_dir/user_output"
+	echo "Could not compile '$executable'"
+	exit_prog 0
 fi
 
-exit $grade
+if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
+	echo "CHEATING"
+	exit_prog -42
+fi
+
+/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
+
+if [[ $? -eq 0 ]]; then
+	echo "Norme check FAILED"
+	exit_prog 0
+fi
+
+echo -e "cc -Wall -Wextra -Werror $src_file main.c -o $executable\n"
+cc -Wall -Wextra -Werror -g3 "$src_dir/$src_file" main.c -o "$executable"
+
+if [[ $? -ne 0 ]]; then
+	echo "Could not compile '$executable'"
+	exit_prog 0
+else
+	test 1 "$executable" "Hello World !"
+	test 2 "$executable" ""
+	test 3 "$executable" "QWERTYUIOP"
+	test 4 "$executable" "qwertyuiop"
+	test 5 "$executable" "QwErTyUiOp"
+	test 6 "$executable" "$(python3 -c 'import sys; sys.stdout.buffer.write(bytes(range(256)))')"
+	exit_prog 10
+fi

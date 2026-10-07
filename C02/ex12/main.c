@@ -2,14 +2,9 @@
 
 void	*ft_print_memory(void *addr, unsigned int size);
 
-int	main()
+int	main(int ac, char **av)
 {
-	char	*addr;
-
-	addr = strdup("Bonjour les aminches\t\n\tc\a est fou\ttout\tce qu on peut faire avec\t\n\tprint_memory\n\n\n\tlol.lol\n ");
-
-	void	*return_value = ft_print_memory(addr, strlen(addr) + 1);
-
-	if (return_value != addr)
-		putstr("                returned_value = KO\n");
+	if (ac == 2) {
+		ft_print_memory(av[1], strlen(av[1]) + 1);
+	}
 }
