@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo -e "\n=========================     C00    ============================\n"
-
 final_grade=0
 end_grade=0
 
@@ -10,6 +8,18 @@ script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 if [[ -n "$1" ]]; then
 	cd "$1"
 fi
+
+echo "= Host-specific information ===================================================="
+echo "\$> hostname; uname -msr"
+hostname
+uname -msr
+echo "\$> date"
+date
+
+echo -e "\n= Collected files =========================================="
+echo "\$> ls -lAR $PWD"
+ls -lAR $PWD
+echo
 
 function test_ex() {
 	if [[ -d "$1" ]]; then
