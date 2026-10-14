@@ -18,7 +18,7 @@ function exit_prog() {
 
 function test() {
 	echo "= Test $1 ================================================================"
-	printf '\$> %s' "$2"
+	printf '$> %s' "$2"
 	for arg in "${@:3}"; do
 		printf ' "'
 		printf '%s' "$arg" | LC_ALL=C perl -pe '
