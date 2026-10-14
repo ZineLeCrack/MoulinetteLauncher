@@ -2,9 +2,9 @@
 
 int	ft_recursive_factorial(int nb);
 
-int main()
+int main(int ac, char **av)
 {
-	for (int i = -3; i < 15; i++) {
-		printf("ft_recursive_factorial(%d) = %d\n", i, ft_recursive_factorial(i));
+	if (ac == 2) {
+		printf("%d", ft_recursive_factorial(atoi(av[1])));
 	}
 }

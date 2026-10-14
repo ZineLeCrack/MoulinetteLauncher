@@ -2,9 +2,9 @@
 
 int	ft_fibonacci(int index);
 
-int main()
+int main(int ac, char **av)
 {
-	for (int i = -3; i < 15; i++) {
-		printf("ft_fibonacci(%d) = %d\n", i, ft_fibonacci(i));
+	if (ac == 2) {
+		printf("%d", ft_fibonacci(atoi(av[1])));
 	}
 }

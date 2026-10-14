@@ -1,52 +1,104 @@
 #!/bin/bash
 
-RED="\033[31;1m"
-GREEN="\033[32;1m"
-YELLOW="\033[33;1m"
-BLUE="\033[34;1m"
-MAGENTA="\033[35;1m"
-RESET="\033[0m"
+src_dir="$(pwd)/$1"
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
+cd "$script_dir"
 
-executable="$script_dir/output"
-src_dir="ex01"
+executable="./user_exe"
+user_output="user_output"
 
-/bin/cc -Wall -Wextra -Werror -g3 "$src_dir/ft_recursive_factorial.c" "$script_dir/main.c" -o "$executable"
+src_file="ft_recursive_factorial.c"
+src_obj="ft_recursive_factorial.o"
+
+function exit_prog() {
+	rm -f "$executable" "$user_output" "$src_obj"
+	exit $1
+}
+
+function test() {
+	echo "= Test $1 ================================================================"
+	printf '$> %s' "$2"
+	for arg in "${@:3}"; do
+		printf ' "'
+		printf '%s' "$arg" | LC_ALL=C perl -pe '
+			s/([\x00-\x1F\x7F-\xFF])/
+				$1 eq "\x07" ? "\\a" :
+				$1 eq "\x08" ? "\\b" :
+				$1 eq "\x09" ? "\\t" :
+				$1 eq "\x0A" ? "\\n" :
+				$1 eq "\x0B" ? "\\v" :
+				$1 eq "\x0C" ? "\\f" :
+				$1 eq "\x0D" ? "\\r" :
+				sprintf("\\x%02x", ord($1))
+			/gex;
+		'
+		printf '"'
+	done
+	printf '\n'
+	{ "$2" "${@:3}"; } &> "$user_output"
+	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
+	diff -U 3 "$user_output" "test$1.output" | cat -e
+
+	if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
+		echo -e "\nDiff KO :("
+		exit_prog 0
+	else
+		echo -e "\nDiff OK :D\n"
+	fi
+}
+
+cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj"
 
 if [[ $? -ne 0 ]]; then
-	echo
-	echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>> DOES NOT COMPILE <<<<<<<<<<<<<<<<<<<<<<<$RESET"
-	echo -e "${RED}KO :(${RESET}"
-	grade=0
-else
-	"$executable" > "$script_dir/user_output"
-
-	diff -au --color=always "$script_dir/user_output" "$script_dir/expected_output"
-
-	if [[ $? -ne 0 ]]; then
-		echo
-		echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-		echo -e "${RED}Diff KO :(${RESET}"
-		grade=0
-	else
-		norminette -R CheckForbiddenSourceHeader "$src_dir" > "$script_dir/user_output"
-
-		if [[ $? -ne 0 ]]; then
-			echo -e "$RED"
-			norminette -R CheckForbiddenSourceHeader "$src_dir" | grep "Error"
-			echo -e "$RESET"
-			echo -e "$RED>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FAILURE <<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-			echo -e "${RED}Norm check KO :(${RESET}"
-			grade=0
-		else
-			echo
-			echo -e "${GREEN}Diff OK :)${RESET}"
-			echo -e "$GREEN>>>>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<<<<$RESET"
-			grade=5
-	fi fi
-
-	rm -f "$executable" "$script_dir/user_output"
+		echo "Could not compile '$executable'"
+		exit_prog 0
 fi
 
-exit $grade
+if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
+		echo "CHEATING"
+		exit_prog -42
+fi
+
+if [[ "$(objdump -dr "$src_obj" | grep -A1 "call" | grep "ft_recursive_factorial-" | wc -l)" -eq 0 ]]; then
+		echo "CHEATING"
+		exit_prog -42
+fi
+
+/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
+
+if [[ $? -eq 0 ]]; then
+	echo "Norme check FAILED"
+	exit_prog 0
+fi
+
+echo -e "cc -Wall -Wextra -Werror $src_file main.c -o $executable\n"
+cc -Wall -Wextra -Werror -g3 "$src_dir/$src_file" main.c -o "$executable"
+
+if [[ $? -ne 0 ]]; then
+	echo "Could not compile '$executable'"
+	exit_prog 0
+else
+	test 1  "$executable" -3
+	test 2  "$executable" -2
+	test 3  "$executable" -1
+	test 4  "$executable" 0
+	test 5  "$executable" 1
+	test 6  "$executable" 2
+	test 7  "$executable" 3
+	test 8  "$executable" 4
+	test 9  "$executable" 5
+	test 10 "$executable" 6
+	test 11 "$executable" 7
+	test 12 "$executable" 8
+	test 13 "$executable" 9
+	test 14 "$executable" 10
+	test 15 "$executable" 11
+	test 16 "$executable" 12
+	test 17 "$executable" 13
+	test 18 "$executable" 14
+	test 19 "$executable" 15
+	test 20 "$executable" 16
+
+	exit_prog 5
+fi
