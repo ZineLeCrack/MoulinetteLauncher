@@ -2,60 +2,19 @@
 
 int	ft_ultimate_range(int **range, int min, int max);
 
-int main()
+int main(int ac, char **av)
 {
-	int	n;
-	int	*tab;
+	if (ac == 3) {
+		int	*tab;
+		int min = atoi(av[1]);
+		int max = atoi(av[2]);
 
-	n = ft_ultimate_range(&tab, 0, 0);
-	printf("min = max -> %s, returned value = %d\n", tab == NULL ? "OK" : "KO", n);
-	if (tab) free(tab);
+		int size = ft_ultimate_range(&tab, min, max);
 
-	n = ft_ultimate_range(&tab, 1, 0);
-	printf("min > max -> %s, returned value = %d\n", tab == NULL ? "OK" : "KO", n);
-	if (tab) free(tab);
-
-	n = ft_ultimate_range(&tab, 2, 9);
-	if (tab) {
-		for (int i = 0; i < 7; i++) {
-			printf("%d ", tab[i]);
+		if (size >= 0) {
+			for (int i = 0; i < size; i++)
+				printf("%d\n", tab[i]);
+			free(tab);
 		}
-		free(tab);
-		printf(", returned value = %d\n", n);
-	} else {
-		putstr("Memory allocation failed.");
-	}
-
-	n = ft_ultimate_range(&tab, -10, -4);
-	if (tab) {
-		for (int i = 0; i < 6; i++) {
-			printf("%d ", tab[i]);
-		}
-		free(tab);
-		printf(", returned value = %d\n", n);
-	} else {
-		putstr("Memory allocation failed.");
-	}
-
-	n = ft_ultimate_range(&tab, -1, 3);
-	if (tab) {
-		for (int i = 0; i < 4; i++) {
-			printf("%d ", tab[i]);
-		}
-		free(tab);
-		printf(", returned value = %d\n", n);
-	} else {
-		putstr("Memory allocation failed.");
-	}
-
-	n = ft_ultimate_range(&tab, -14, 24);
-	if (tab) {
-		for (int i = 0; i < 38; i++) {
-			printf("%d ", tab[i]);
-		}
-		free(tab);
-		printf(", returned value = %d\n", n);
-	} else {
-		putstr("Memory allocation failed.");
 	}
 }

@@ -2,46 +2,24 @@
 
 char	*ft_strjoin(int size, char **strs, char *sep);
 
-int main()
+int main(int ac, char **av)
 {
-	char	*strs1[] = { "Hello", "World", "!\n" };
-	char	sep1[] = " ";
+	if (ac > 1) {
+		char **strs = malloc(sizeof(char*) * (ac - 2));
 
-	char *join = ft_strjoin(3, strs1, sep1);
+		for (int i = 0; i < ac - 2; i++) {
+			strs[i] = av[i + 1];
+		}
 
-	putstr(join);
-	free(join);
+		char *str = ft_strjoin(ac - 2, strs, av[ac - 1]);
 
-	char	*strs2[] = { "He", "ll", "o\n", "World" };
-	char	sep2[] = "";
+		free(strs);
 
-	join = ft_strjoin(3, strs2, sep2);
-
-	putstr(join);
-	free(join);
-
-	char	*strs3[] = { "arc", "", "en", "", "ciel\n" };
-	char	sep3[] = "-";
-
-	join = ft_strjoin(5, strs3, sep3);
-
-	putstr(join);
-	free(join);
-
-	char	*strs4[] = { "", "", "", "", "" };
-	char	sep4[] = "";
-
-	join = ft_strjoin(5, strs4, sep4);
-
-	putstr(join);
-	free(join);
-
-	char	*strs5[] = { "KO" };
-	char	sep5[] = ".";
-
-	putstr("Size = 0\n");
-	join = ft_strjoin(0, strs5, sep5);
-
-	putstr(join);
-	free(join);
+		if (str) {
+			printf("%s", str);
+			free(str);
+		} else {
+			printf("Memory allocation failed");
+		}
+	}
 }
