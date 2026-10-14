@@ -18,7 +18,24 @@ function exit_prog() {
 
 function test() {
 	echo "= Test $1 ================================================================"
-	echo "\$> $2 ${@:3}"
+	printf '\$> %s' "$2"
+	for arg in "${@:3}"; do
+		printf ' "'
+		printf '%s' "$arg" | LC_ALL=C perl -pe '
+			s/([\x00-\x1F\x7F-\xFF])/
+				$1 eq "\x07" ? "\\a" :
+				$1 eq "\x08" ? "\\b" :
+				$1 eq "\x09" ? "\\t" :
+				$1 eq "\x0A" ? "\\n" :
+				$1 eq "\x0B" ? "\\v" :
+				$1 eq "\x0C" ? "\\f" :
+				$1 eq "\x0D" ? "\\r" :
+				sprintf("\\x%02x", ord($1))
+			/gex;
+		'
+		printf '"'
+	done
+	printf '\n'
 	{ "$2" "${@:3}"; } &> "$user_output"
 	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
 	diff -U 3 "$user_output" "test$1.output" | cat -e
