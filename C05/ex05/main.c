@@ -2,9 +2,9 @@
 
 int	ft_sqrt(int nb);
 
-int main()
+int main(int ac, char **av)
 {
-	for (int i = -3; i < 101; i++) {
-		printf("ft_sqrt(%d) = %d\n", i, ft_sqrt(i));
+	if (ac == 2) {
+		printf("%d", ft_sqrt(atoi(av[1])));
 	}
 }

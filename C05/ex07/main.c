@@ -2,9 +2,9 @@
 
 int	ft_find_next_prime(int nb);
 
-int main()
+int main(int ac, char **av)
 {
-	for (int i = -3; i < 250; i++) {
-		printf("ft_find_next_prime(%d) = %d\n", i, ft_find_next_prime(i));
+	if (ac == 2) {
+		printf("%d", ft_find_next_prime(atoi(av[1])));
 	}
 }
