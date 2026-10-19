@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlebaill <rlebaill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 08:47:04 by romain            #+#    #+#             */
-/*   Updated: 2026/07/29 11:16:25 by rlebaill         ###   ########.fr       */
+/*   Updated: 2026/10/19 07:58:38 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@
 # error Invalid `#define`
 #endif
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	printf("ABS(%d) = %d\n", 1, ABS(1));
-	printf("ABS(%d) = %d\n", 42, ABS(42));
-	printf("ABS(%d) = %d\n", -42, ABS(-42));
-	printf("ABS(%d) = %d\n", 0, ABS(0));
-	printf("ABS(%d) = %d\n", -255, ABS(-255));
-	printf("ABS(%d) = %d\n", 1024, ABS(1024));
-	printf("ABS(%d) = %d\n", -1, ABS(-1));
-	printf("ABS(%d) = %d\n", INT_MAX, ABS(INT_MAX));
-	printf("ABS(%d) = %d\n", -INT_MAX, ABS(-INT_MAX));
+	if (ac == 2) {
+		printf("%d", ABS(atoi(av[1])));
+	}
 }

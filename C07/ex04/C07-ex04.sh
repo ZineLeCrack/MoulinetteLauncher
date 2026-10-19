@@ -58,18 +58,20 @@ for i in "${!src_files[@]}"; do
 	fi
 done
 
-ld -r "${src_objs[@]}" -o "$src_cbn"
+if [[ ${#src_files[@]} -ne 0 ]]; then
+	ld -r "${src_objs[@]}" -o "$src_cbn"
 
-if [[ "$(nm "$src_cbn" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
-	echo "CHEATING"
-	exit_prog -42
-fi
+	if [[ "$(nm "$src_cbn" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
+		echo "CHEATING"
+		exit_prog -42
+	fi
 
-/usr/bin/norminette "${src_files[@]/#/"$src_dir"/}" | grep -E "(Error|Warning)" > /dev/null
+	/usr/bin/norminette "${src_files[@]/#/"$src_dir"/}" | grep -E "(Error|Warning)" > /dev/null
 
-if [[ $? -eq 0 ]]; then
-	echo "Norme check FAILED"
-	exit_prog 0
+	if [[ $? -eq 0 ]]; then
+		echo "Norme check FAILED"
+		exit_prog 0
+	fi
 fi
 
 echo -e "cc -Wall -Wextra -Werror ${src_files[*]} main.c -o $executable\n"

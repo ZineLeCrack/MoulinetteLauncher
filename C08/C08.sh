@@ -1,17 +1,7 @@
 #!/bin/bash
 
-RED="\033[31;1m"
-GREEN="\033[32;1m"
-YELLOW="\033[33;1m"
-BLUE="\033[34;1m"
-MAGENTA="\033[35;1m"
-RESET="\033[0m"
-
 final_grade=0
 end_grade=0
-
-echo
-echo -e "$BLUE=========================     C08    ============================$RESET"
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -19,124 +9,47 @@ if [[ -n "$1" ]]; then
 	cd "$1"
 fi
 
-src_dir="ex00"
+echo "= Host-specific information ===================================================="
+echo "\$> hostname; uname -msr"
+hostname
+uname -msr
+echo "\$> date"
+date
 
-if [[ -d "$src_dir" ]]; then
-	echo
+echo -e "\n= Collected files =========================================="
+echo "\$> ls -lAR $PWD"
+ls -lAR $PWD
+echo
 
-	echo -e "$MAGENTA===========================  ex00 ===============================$RESET"
-	echo -e "$MAGENTA===========================  ft.h ===============================$RESET"
+function test_ex() {
+	if [[ -d "$1" ]]; then
+		echo "= $1 ========================================================================="
 
-	bash "$script_dir/ex00/C08-ex00.sh"
+		bash "$script_dir/$1/C08-$1.sh" "$1"
 
-	grade=$?
-	echo -e $YELLOW"\nGrade = $grade"$RESET
-	if [[ $grade -eq 0 ]]; then
-		end_grade=1
+		grade=$?
+
+		if [[ $grade -eq 214 ]]; then 
+			echo -e "Grade: -42\n"
+		else
+			echo -e "Grade: $grade\n"
+		fi
+
+		if [[ $grade -eq 0 ]]; then
+			end_grade=1
+		else if [[ $grade -eq 214 ]]; then
+			end_grade=1
+			final_grade=-42
+		fi fi
+
+		if [[ $end_grade -ne 1 ]]; then
+			final_grade=$((final_grade + grade))
+		fi
 	fi
-	if [[ $end_grade -ne 1 ]]; then
-		final_grade=$((final_grade + grade))
-	fi
-fi
+}
 
-src_dir="ex01"
+for i in {00..05}; do
+	test_ex "ex$i"
+done
 
-if [[ -d "$src_dir" ]]; then
-	echo
-
-	echo -e "$MAGENTA=========================     ex01     ==========================$RESET"
-	echo -e "$MAGENTA========================= ft_boolean.h ==========================$RESET"
-
-	bash "$script_dir/ex01/C08-ex01.sh"
-
-	grade=$?
-	echo -e $YELLOW"\nGrade = $grade"$RESET
-	if [[ $grade -eq 0 ]]; then
-		end_grade=1
-	fi
-	if [[ $end_grade -ne 1 ]]; then
-		final_grade=$((final_grade + grade))
-	fi
-fi
-
-src_dir="ex02"
-
-if [[ -d "$src_dir" ]]; then
-	echo
-
-	echo -e "$MAGENTA===========================   ex02   ============================$RESET"
-	echo -e "$MAGENTA=========================== ft_abs.h ============================$RESET"
-
-	bash "$script_dir/ex02/C08-ex02.sh"
-
-	grade=$?
-	echo -e $YELLOW"\nGrade = $grade"$RESET
-	if [[ $grade -eq 0 ]]; then
-		end_grade=1
-	fi
-	if [[ $end_grade -ne 1 ]]; then
-		final_grade=$((final_grade + grade))
-	fi
-fi
-
-src_dir="ex03"
-
-if [[ -d "$src_dir" ]]; then
-	echo
-
-	echo -e "$MAGENTA==========================    ex03    ===========================$RESET"
-	echo -e "$MAGENTA========================== ft_point.h ===========================$RESET"
-
-	bash "$script_dir/ex03/C08-ex03.sh"
-
-	grade=$?
-	echo -e $YELLOW"\nGrade = $grade"$RESET
-	if [[ $grade -eq 0 ]]; then
-		end_grade=1
-	fi
-	if [[ $end_grade -ne 1 ]]; then
-		final_grade=$((final_grade + grade))
-	fi
-fi
-
-src_dir="ex04"
-
-if [[ -d "$src_dir" ]]; then
-	echo
-
-	echo -e "$MAGENTA========================      ex04      =========================$RESET"
-	echo -e "$MAGENTA======================== ft_strs_to_tab =========================$RESET"
-
-	bash "$script_dir/ex04/C08-ex04.sh"
-
-	grade=$?
-	echo -e $YELLOW"\nGrade = $grade"$RESET
-	if [[ $grade -eq 0 ]]; then
-		end_grade=1
-	fi
-	if [[ $end_grade -ne 1 ]]; then
-		final_grade=$((final_grade + grade))
-	fi
-fi
-
-src_dir="ex05"
-
-if [[ -d "$src_dir" ]]; then
-	echo
-
-	echo -e "$MAGENTA==========================    ex05     ==========================$RESET"
-	echo -e "$MAGENTA========================== ft_show_tab ==========================$RESET"
-
-	bash "$script_dir/ex05/C08-ex05.sh"
-
-	grade=$?
-	echo -e $YELLOW"\nGrade = $grade"$RESET
-	if [[ $grade -eq 0 ]]; then
-		end_grade=1
-	fi
-	if [[ $end_grade -ne 1 ]]; then
-		final_grade=$((final_grade + grade))
-	fi
-fi
-
-echo -e $YELLOW"\n\nFinal grade: $final_grade"$RESET
+echo -e "= Final grade: $final_grade =============================================================="
