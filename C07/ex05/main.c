@@ -2,48 +2,61 @@
 
 char	**ft_split(char *str, char *charset);
 
-int main()
+int main(int ac, char **av)
 {
-	char	str1[] = "Bonjour, je suis rlebaill !";
-	char	charset1[] = " ";
+	if (ac == 3) {
+		char	**split = ft_split(av[1], av[2]);
 
-	char	**split = ft_split(str1, charset1);
-	printf("--- str = \"%s\", charset = \"%s\" ---\n", str1, charset1);
-	for (int i = 0; split[i]; i++) {
-		printf("\"%s\", ", split[i]);
-		free(split[i]);
+		if (split) {
+			for (int i = 0; split[i]; i++) {
+				printf("%s\n", split[i]);
+				free(split[i]);
+			}
+			free(split);
+		} else {
+			printf("%p", split);
+		}
 	}
-	printf("(null)\n");
-	free(split);
+	// char	str1[] = "Bonjour, je suis rlebaill !";
+	// char	charset1[] = " ";
 
-	char	charset2[] = "";
+	// char	**split = ft_split(str1, charset1);
+	// printf("--- str = \"%s\", charset = \"%s\" ---\n", str1, charset1);
+	// for (int i = 0; split[i]; i++) {
+	// 	printf("\"%s\", ", split[i]);
+	// 	free(split[i]);
+	// }
+	// printf("(null)\n");
+	// free(split);
 
-	split = ft_split(str1, charset2);
-	printf("--- str = \"%s\", charset = \"%s\" ---\n", str1, charset2);
-	for (int i = 0; split[i]; i++) {
-		printf("\"%s\", ", split[i]);
-		free(split[i]);
-	}
-	printf("(null)\n");
-	free(split);
+	// char	charset2[] = "";
 
-	char	charset3[] = "i us";
+	// split = ft_split(str1, charset2);
+	// printf("--- str = \"%s\", charset = \"%s\" ---\n", str1, charset2);
+	// for (int i = 0; split[i]; i++) {
+	// 	printf("\"%s\", ", split[i]);
+	// 	free(split[i]);
+	// }
+	// printf("(null)\n");
+	// free(split);
 
-	split = ft_split(str1, charset3);
-	printf("--- str = \"%s\", charset = \"%s\" ---\n", str1, charset3);
-	for (int i = 0; split[i]; i++) {
-		printf("\"%s\", ", split[i]);
-		free(split[i]);
-	}
-	printf("(null)\n");
-	free(split);
+	// char	charset3[] = "i us";
 
-	split = ft_split(charset2, charset1);
-	printf("--- str = \"%s\", charset = \"%s\" ---\n", charset2, charset1);
-	for (int i = 0; split[i]; i++) {
-		printf("\"%s\", ", split[i]);
-		free(split[i]);
-	}
-	printf("(null)\n");
-	free(split);
+	// split = ft_split(str1, charset3);
+	// printf("--- str = \"%s\", charset = \"%s\" ---\n", str1, charset3);
+	// for (int i = 0; split[i]; i++) {
+	// 	printf("\"%s\", ", split[i]);
+	// 	free(split[i]);
+	// }
+	// printf("(null)\n");
+	// free(split);
+
+	// split = ft_split(charset2, charset1);
+	// printf("--- str = \"%s\", charset = \"%s\" ---\n", charset2, charset1);
+	// for (int i = 0; split[i]; i++) {
+	// 	printf("\"%s\", ", split[i]);
+	// 	free(split[i]);
+	// }
+	// printf("(null)\n");
+	// free(split);
 }
