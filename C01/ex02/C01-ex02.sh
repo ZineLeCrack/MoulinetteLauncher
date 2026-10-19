@@ -56,8 +56,8 @@ if [[ $? -ne 0 ]]; then
 fi
 
 if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
-		echo "CHEATING"
-		exit_prog -42
+	echo "CHEATING"
+	exit_prog -42
 fi
 
 /usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null

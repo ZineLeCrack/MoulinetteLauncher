@@ -61,8 +61,8 @@ done
 ld -r "${src_objs[@]}" -o "$src_cbn"
 
 if [[ "$(nm "$src_cbn" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
-		echo "CHEATING"
-		exit_prog -42
+	echo "CHEATING"
+	exit_prog -42
 fi
 
 /usr/bin/norminette "${src_files[@]/#/"$src_dir"/}" | grep -E "(Error|Warning)" > /dev/null
