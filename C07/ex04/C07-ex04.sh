@@ -65,7 +65,7 @@ if [[ "$(nm "$src_cbn" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $
 		exit_prog -42
 fi
 
-/usr/bin/norminette "$src_dir/${src_files[@]}" | grep -E "(Error|Warning)" > /dev/null
+/usr/bin/norminette "${src_files[@]/#/"$src_dir"/}" | grep -E "(Error|Warning)" > /dev/null
 
 if [[ $? -eq 0 ]]; then
 	echo "Norme check FAILED"
