@@ -56,7 +56,7 @@ if [[ $? -ne 0 ]]; then
 	exit_prog 0
 fi
 
-if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f allowed_functions.txt | wc -l)" -ne 0 ]]; then
+if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f <(cat allowed_functions.txt ../functions.txt) | wc -l)" -ne 0 ]]; then
 	echo "CHEATING"
 	exit_prog -42
 fi
