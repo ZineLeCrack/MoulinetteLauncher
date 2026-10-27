@@ -76,7 +76,7 @@ if [[ $? -ne 0 ]]; then
 else
 	test 1 "$executable" "" 1 1
 	test 2 "$executable" "42" 0 2
-	test 3 "$executable" "defewfbweifbyweifbwefwe" 10 10
+	test 3 "$executable" "defewfbweifbyweifbwefwe" 23 10
 	test 4 "$executable" "2913248357385723565623563230620" 1 5673
 	test 5 "$executable" "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 42 0
 
