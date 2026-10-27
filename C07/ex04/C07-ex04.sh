@@ -37,7 +37,7 @@ function test() {
 		printf '"'
 	done
 	printf '\n'
-	{ valgrind "$2" "${@:3}" 2> >(grep -iqE "leaked memory|Invalid write|Invalid read|Conditional jump or move" && echo "Memory error detected"); } &> "$user_output"
+	{ valgrind "$2" "${@:3}" 2> >(grep --ignore-case -iqE "leaked memory|Invalid write|Invalid read|Conditional jump or move|Warning" && echo "Memory error detected"); } &> "$user_output"
 	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
 	diff -U 3 "$user_output" "test$1.output" | cat -e
 

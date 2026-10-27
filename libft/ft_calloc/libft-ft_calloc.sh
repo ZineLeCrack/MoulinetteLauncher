@@ -36,7 +36,7 @@ function test() {
 		printf '"'
 	done
 	printf '\n'
-	{ valgrind "$2" "${@:3}" 2> >(grep -iqE "leaked memory|Invalid write|Invalid read|Conditional jump or move" && echo "Memory error detected"); } &> "$user_output"
+	{ valgrind "$2" "${@:3}" 2> >(grep --ignore-case -iqE "leaked memory|Invalid write|Invalid read|Conditional jump or move|Warning" && echo "Memory error detected"); } &> "$user_output"
 	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
 	diff -U 3 "$user_output" "test$1.output" | cat -e
 
@@ -74,10 +74,11 @@ if [[ $? -ne 0 ]]; then
 	echo "Could not compile '$executable'"
 	exit_prog 0
 else
-	test 1 "$executable" 13 1 "Hello World !"
-	test 2 "$executable" 1024 0 ""
-	test 3 "$executable" 0 1024 ""
-	test 4 "$executable" 2 4 "$(python3 -c "print('\x01\x02\x03\x04\x05\x06\x07\x08')")"
+	test 1 "$executable" 12 1
+	test 2 "$executable" 1024 0
+	test 3 "$executable" 0 1024
+	test 4 "$executable" 42 4
+	test 5 "$executable" 4294967296 4294967296
 
 	exit_prog 2
 fi
