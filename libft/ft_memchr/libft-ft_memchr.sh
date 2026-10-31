@@ -5,6 +5,8 @@ src_dir="$(pwd)"
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 cd "$script_dir"
 
+format=$2
+
 executable="./user_exe"
 user_output="user_output"
 
@@ -17,62 +19,110 @@ function exit_prog() {
 }
 
 function test() {
-	echo "= Test $1 ================================================================"
-	printf '$> %s' "$2"
-	for arg in "${@:3}"; do
-		printf ' "'
-		printf '%s' "$arg" | LC_ALL=C perl -pe '
-			s/([\x00-\x1F\x7F-\xFF])/
-				$1 eq "\x07" ? "\\a" :
-				$1 eq "\x08" ? "\\b" :
-				$1 eq "\x09" ? "\\t" :
-				$1 eq "\x0A" ? "\\n" :
-				$1 eq "\x0B" ? "\\v" :
-				$1 eq "\x0C" ? "\\f" :
-				$1 eq "\x0D" ? "\\r" :
-				sprintf("\\x%02x", ord($1))
-			/gex;
-		'
-		printf '"'
-	done
-	printf '\n'
-	{ "$2" "${@:3}"; } &> "$user_output"
-	echo "\$> diff -U 3 $user_output test$1.output | cat -e"
-	diff -U 3 "$user_output" "test$1.output" | cat -e
+	case $format in
+		moulinette)
+			echo "= Test $1 ================================================================"
+			printf '$> %s' "$2"
+			for arg in "${@:3}"; do
+				printf ' "'
+				printf '%s' "$arg" | LC_ALL=C perl -pe '
+					s/([\x00-\x1F\x7F-\xFF])/
+						$1 eq "\x07" ? "\\a" :
+						$1 eq "\x08" ? "\\b" :
+						$1 eq "\x09" ? "\\t" :
+						$1 eq "\x0A" ? "\\n" :
+						$1 eq "\x0B" ? "\\v" :
+						$1 eq "\x0C" ? "\\f" :
+						$1 eq "\x0D" ? "\\r" :
+						sprintf("\\x%02x", ord($1))
+					/gex;
+				'
+				printf '"'
+			done
+			printf '\n'
+			{ "$2" "${@:3}"; } &> "$user_output"
+			echo "\$> diff -U 3 $user_output test$1.output | cat -e"
+			diff -U 3 "$user_output" "test$1.output" | cat -e
 
-	if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
-		echo -e "\nDiff KO :("
-		exit_prog 0
-	else
-		echo -e "\nDiff OK :D\n"
-	fi
+			if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
+				echo -e "\nDiff KO :("
+				exit_prog 0
+			else
+				echo -e "\nDiff OK :D\n"
+			fi
+			;;
+		default)
+			{ "$2" "${@:3}"; } &> "$user_output"
+			diff "$user_output" "test$1.output" &> /dev/null
+			if [[ $? -ne 0 ]]; then
+				echo -ne "\033[31;1m[KO]\033[0m"
+				exit_prog 0
+			else
+				echo -ne "\033[32;1m[OK]\033[0m"
+			fi
+			;;
+	esac
 }
 
-cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj"
+case $format in
+	moulinette)
+		cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj"
+
+		if [[ $? -ne 0 ]]; then
+			echo "Could not compile '$executable'"
+			exit_prog 0
+		fi
+
+		if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f <(cat allowed_functions.txt ../functions.txt) | wc -l)" -ne 0 ]]; then
+			echo "CHEATING"
+			exit_prog -42
+		fi
+
+		/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
+
+		if [[ $? -eq 0 ]]; then
+			echo "Norme check FAILED"
+			exit_prog 0
+		fi
+
+		echo -e "cc -Wall -Wextra -Werror main.c libft.a -I$src_dir -o $executable\n"
+		cc -Wall -Wextra -Werror -g3 main.c "$src_dir/libft.a" -I$src_dir -o "$executable"
+		;;
+	default)
+		cc -Wall -Wextra -Werror -g3 -c "$src_dir/$src_file" -o "$src_obj" &> /dev/null
+
+		if [[ $? -ne 0 ]]; then
+			echo -ne "\033[31;1mDoes not compile\033[0m"
+			exit_prog 0
+		fi
+
+		if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f <(cat allowed_functions.txt ../functions.txt) | wc -l)" -ne 0 ]]; then
+			echo -ne "\033[31;1mForbidden function found\033[0m"
+			exit_prog -42
+		fi
+
+		/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
+
+		if [[ $? -eq 0 ]]; then
+			echo -ne "\033[31;1mNorme error detected\033[0m"
+			exit_prog 0
+		fi
+
+		cc -Wall -Wextra -Werror -g3 main.c "$src_dir/libft.a" -I$src_dir -o "$executable" &> /dev/null
+		;;
+esac
 
 if [[ $? -ne 0 ]]; then
-	echo "Could not compile '$executable'"
-	exit_prog 0
-fi
-
-if [[ "$(nm "$src_obj" | grep " U " | awk '{ print $2 }' | awk -F '@' '{ print $1 }' | grep -v -F -x -f <(cat allowed_functions.txt ../functions.txt) | wc -l)" -ne 0 ]]; then
-	echo "CHEATING"
-	exit_prog -42
-fi
-
-/usr/bin/norminette "$src_dir/$src_file" | grep -E "(Error|Warning)" > /dev/null
-
-if [[ $? -eq 0 ]]; then
-	echo "Norme check FAILED"
-	exit_prog 0
-fi
-
-echo -e "cc -Wall -Wextra -Werror main.c libft.a -I$src_dir -o $executable\n"
-cc -Wall -Wextra -Werror -g3 main.c "$src_dir/libft.a" -I$src_dir -o "$executable"
-
-if [[ $? -ne 0 ]]; then
-	echo "Could not compile '$executable'"
-	exit_prog 0
+	case $format in
+		moulinette)
+			echo "Could not compile '$executable'"
+			exit_prog 0
+			;;
+		default)
+			echo -ne "\033[31;1mDoes not compile\033[0m"
+			exit_prog 0
+			;;
+	esac
 else
 	test 1  "$executable" "0123456789" 48 5
 	test 2  "$executable" "0123456789" 52 5
