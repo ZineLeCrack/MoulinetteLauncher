@@ -55,7 +55,29 @@ function test() {
 			{ valgrind "$2" "${@:3}" 2> >(grep --ignore-case -iqE "leaked memory|Invalid write|Invalid read|Conditional jump or move|Warning" && echo "Memory error detected"); } &> "$user_output"
 			diff "$user_output" "test$1.output" &> /dev/null
 			if [[ $? -ne 0 ]]; then
-				echo -ne "\033[31;1m[KO]\033[0m"
+				echo -n > trace.txt
+				printf '$> %s' "$2" >> trace.txt
+				for arg in "${@:3}"; do
+					printf ' "' >> trace.txt
+					printf '%s' "$arg" | LC_ALL=C perl -pe '
+						s/([\x00-\x1F\x7F-\xFF])/
+							$1 eq "\x07" ? "\\a" :
+							$1 eq "\x08" ? "\\b" :
+							$1 eq "\x09" ? "\\t" :
+							$1 eq "\x0A" ? "\\n" :
+							$1 eq "\x0B" ? "\\v" :
+							$1 eq "\x0C" ? "\\f" :
+							$1 eq "\x0D" ? "\\r" :
+							sprintf("\\x%02x", ord($1))
+						/gex;
+					' >> trace.txt
+					printf '"' >> trace.txt
+				done
+				printf '\n' >> trace.txt
+				echo "\$> diff -U 3 $user_output test$1.output | cat -e" >> trace.txt
+				diff -U 3 "$user_output" "test$1.output" | cat -e >> trace.txt
+				FILE="$(pwd)/trace.txt"
+				printf "\033[31;1m[KO: \033]8;;file://%s\033\\%s\033]8;;\033\\]\033[0m" "$FILE" "$FILE"
 				exit_prog 0
 			else
 				echo -ne "\033[32;1m[OK]\033[0m"
